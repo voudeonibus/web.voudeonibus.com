@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/voudeonibus/web.voudeonibus.com#readme",
   "devDependencies": {
+    "autoprefixer": "^6.3.3",
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
     "babel-plugin-transform-object-rest-spread": "^6.5.0",
