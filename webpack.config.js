@@ -32,6 +32,22 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     })
-  ]
+  ],
+
+  module: {
+    loaders: [{
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      loader: 'babel'
+    }, {
+      test: /\.(scss, sass)?/,
+      loader: 'style-loader!css-loader!postcss-loader!sass-loader'
+    }, {
+      test: /\.(png|jpe?g|svg|gif)$/,
+      loaders: [
+        'url-loader?limit=8192'
+      ]
+    }]
+  }
 
 }
