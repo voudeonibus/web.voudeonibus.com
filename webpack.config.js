@@ -47,7 +47,15 @@ module.exports = {
       loaders: [
         'url-loader?limit=8192'
       ]
-    }]
+    }],
+
+    resolve: {
+      extensions: ['', '.js', '.scss', '.sass']
+    }
+  },
+
+  postcss: function () {
+    return [autoprefixer, lost]
   }
 
 }
