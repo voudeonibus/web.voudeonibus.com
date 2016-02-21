@@ -38,7 +38,7 @@ export function incrementIfOdd () {
 
 export function incremetAsync (delay = 1000) {
   return dispatch => {
-    setTimeout(function () {
+    setTimeout(() => {
       dispatch(increment())
     }, delay)
   }
