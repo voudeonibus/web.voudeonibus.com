@@ -38,7 +38,7 @@ app.use(handleRender)
 
 function handleRender (req, res) {
   // Query api...asynchronously
-  fetchCounter(function apiResult () {
+  fetchCounter(function (apiResult) {
     // Read the counter from the request, if provided
     const params = qs.parse(req.query)
     const counter = parseInt(params.counter, 10) || apiResult || 0
