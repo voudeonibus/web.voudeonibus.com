@@ -5,7 +5,6 @@ var webpack = require('webpack')
 var autoprefixer = require('autoprefixer')
 var lost = require('lost')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   devtool: 'eval-source-map',
