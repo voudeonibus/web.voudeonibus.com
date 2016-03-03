@@ -47,7 +47,7 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel'
     }, {
-      test: /\.(scss|sass)$/,
+      test: /\.(scss|sass|css)$/,
       loader: 'style-loader!css-loader!postcss-loader!sass-loader'
     }, {
       test: /\.(png|jpe?g|svg|gif)$/,
