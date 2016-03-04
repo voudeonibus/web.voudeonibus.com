@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, Link, browserHistory } from 'react-router'
 
 import About from './about'
 import '../styles/main.scss'
@@ -8,18 +8,23 @@ import '../styles/main.scss'
 export default class App extends Component {
   render () {
     return (
-      <div>
-        <a href='/about'>About</a>
-      </div>
+      <section>
+        <h1>App</h1>
+        <ul>
+          <li><Link to='/about'>About</Link></li>
+          <li><Link to='/contact'>Contact</Link></li>
+        </ul>
+      </section>
     )
   }
 }
 
-render(
-  <Router history={browserHistory}>
+render((
+    <Router history={browserHistory}>
     <Route path='/' component={App}>
       <Route path='about' componet={About} />
+      <Route path='contact' componet={Contact} />
     </Route>
-  </Router>,
+  </Router>),
   document.getElementById('the__root')
 )
