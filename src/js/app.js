@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import { Router, Route, Link, browserHistory } from 'react-router'
 
 import About from './about'
+import Contact from './contact'
 import '../styles/main.scss'
 
 export default class App extends Component {
