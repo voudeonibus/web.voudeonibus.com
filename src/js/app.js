@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
 
 import About from './about'
 import Contact from './contact'
@@ -23,6 +23,7 @@ export default class App extends Component {
 render((
     <Router history={browserHistory}>
     <Route path='/' component={App}>
+      <IndexRoute component={App} />
       <Route path='about' componet={About} />
       <Route path='contact' componet={Contact} />
     </Route>
