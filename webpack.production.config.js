@@ -10,7 +10,7 @@ var StatsPlugin = require('stats-webpack-plugin')
 
 module.exports = {
   entry: [
-    path.join(__dirname, 'src/js/main.js')
+    path.join(__dirname, 'src/js/app.js')
   ],
 
   output: {
