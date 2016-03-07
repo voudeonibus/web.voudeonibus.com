@@ -6,6 +6,8 @@ import About from './about'
 import Contact from './contact'
 import '../styles/main.scss'
 
+// import img from '../img/myimg.jpg'
+
 export default class App extends Component {
   render () {
     return (
@@ -14,6 +16,7 @@ export default class App extends Component {
         <ul>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
+          {/*<img src={img} />*/}
         </ul>
       </section>
     )
