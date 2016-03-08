@@ -6,6 +6,7 @@ import About from './about'
 import Contact from './contact'
 
 import Header from './header'
+import LineList from './LineList'
 import '../styles/main.scss'
 
 // import img from '../img/myimg.jpg'
@@ -17,6 +18,7 @@ export default class App extends Component {
 
         <div className='vdb-side'>
           <Header />
+          <LineList />
         </div>
 
         <div className='vdb-wrap'>
