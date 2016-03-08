@@ -31,8 +31,6 @@ render((
     <Router history={browserHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={App} />
-      <Route path='about' componet={About} />
-      <Route path='contact' componet={Contact} />
     </Route>
   </Router>),
   document.getElementById('the__root')

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import BoxSearch from './BoxSearch'
-import VoudeOnibusPng from '../img/voudeonibus.png'
+import VoudeOnibusPng from '../../img/voudeonibus.png'
 
 export default class About extends Component {
     render () {
