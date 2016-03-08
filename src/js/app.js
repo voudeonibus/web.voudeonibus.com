@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import About from './about'
 import Contact from './contact'
@@ -8,8 +8,6 @@ import Contact from './contact'
 import Header from './header'
 import LineList from './LineList'
 import '../styles/main.scss'
-
-// import img from '../img/myimg.jpg'
 
 export default class App extends Component {
   render () {
@@ -26,13 +24,6 @@ export default class App extends Component {
           </div>
         </div>
 
-
-        {/*<h1>App</h1>
-        <ul>
-          <li><Link to='/about'>About</Link></li>
-          <li><Link to='/contact'>Contact</Link></li>
-
-        </ul>*/}
       </section>
     )
   }
