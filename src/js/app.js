@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
-import About from './about'
-import Contact from './contact'
+import Header from './components/header'
+import LineList from './components/LineList'
 
-import Header from './header'
-import LineList from './LineList'
 import '../styles/main.scss'
 
 export default class App extends Component {
