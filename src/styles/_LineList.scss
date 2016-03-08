@@ -1,23 +1,23 @@
 .vdb-line-list {
   padding: 0;
   overflow: auto;
-  height: calc(100% - 17rem);
+  height: calc(100% - 17.2rem);
 }
 
 .vdb-line-list_item {
   list-style: none;
   border-bottom: 1px solid $gray-low;
-  line-height: 3rem;
+  line-height: 2.5rem;
   position: relative;
 
   // label number
   .number {
     background: $brand;
     color: white;
-    font-size: .8rem;
+    font-size: .6rem;
     padding: 0 .3em;
     margin-right: 1rem;
-    line-height: 1rem;
+    line-height: .5rem;
     position: relative;
     top: -.1rem;
     &:before {
@@ -25,11 +25,11 @@
       display: block;
       width: 0;
       height: 0;
-      border: 0.7rem solid transparent;
-      border-bottom: 1rem solid $brand;
+      border: 1em solid transparent;
+      border-bottom: 1.2em solid $brand;
       position: absolute;
-      top: -0.7rem;
-      right: -0.7rem;
+      top: -1em;
+      right: -1em;
     }
     span {
       position: relative;
@@ -40,7 +40,7 @@
   a {
     display: block;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: $brand;
   }
 

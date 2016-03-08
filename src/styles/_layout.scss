@@ -20,20 +20,20 @@ body {
   width: 100%;
   height: 100%;
   max-width: 1240px;
-  padding: 0 .5rem;
+  padding: 0 4rem;
   margin: 0 auto;
   position: relative;
 }
 
-@lost gutter .02rem;
+@lost gutter .5rem;
 
 .vdb-side {
-  lost-column: 2/6;
+  lost-column: 3.5/12;
   height: 100%;
 }
 
 .vdb-wrap {
-  lost-column: 4/6;
+  lost-column: 8.5/12;
   padding: 1em;
   height: 100%;
 }
