@@ -1,0 +1,28 @@
+body {
+  background: $bg;
+  &:before {
+    content: "";
+    background: $brand;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $top-height;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.vdb-side {
+  lost-column: 1/3;
+  float: left;
+}
+
+.vdb-wrap {
+
+}

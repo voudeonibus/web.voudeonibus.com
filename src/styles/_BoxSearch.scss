@@ -1,0 +1,28 @@
+.vdb-search-box {
+  position: relative;
+  input {
+    width: 100%;
+    height: 2.7em;
+
+    border: 0;
+    padding: 0 0 0 2.7em;
+    background: white;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+    border-radius: 2px;
+
+    line-height: 2.5em;
+    font-size: .9em;
+    color: #727272;
+  }
+  &:before {
+    content: "";
+    display: block;
+    width: .9em;
+    height: .9em;
+    background: url(../img/search-icon.svg) center/cover no-repeat;
+
+    position: absolute;
+    left: .8em;
+    top: .8em;
+  }
+}

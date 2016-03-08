@@ -1,15 +1,30 @@
-// DO NOT WRITE ANY STYLES HERE
-// USE THIS FILES ONLY TO IMPORT ANOTHER STYLES
-// LIKE SO:
-// @import 'foo'
-
 @import '../../node_modules/normalize.css/normalize';
-//
-// div {
-//   lost-column: 1/12;
-// https://github.com/peterramsing/lost
-// }
-//
-// div {
-//   display: flex;
-// }
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 16px/1.4 "Lato", sans-serif;
+}
+
+// dimensions
+$top-height: 15rem;
+
+// var color
+$brand:     #249DF7;
+$gray:      #727272;
+$gray-low:  #E5E5E5;
+$bg:        #F9F9F9;
+
+// layout
+@import '_layout';
+
+// header
+@import '_header';
+@import '_BoxSearch';

@@ -4,6 +4,8 @@ import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
 
 import About from './about'
 import Contact from './contact'
+
+import Header from './header'
 import '../styles/main.scss'
 
 // import img from '../img/myimg.jpg'
@@ -11,13 +13,19 @@ import '../styles/main.scss'
 export default class App extends Component {
   render () {
     return (
-      <section>
-        <h1>App</h1>
+      <section className='container'>
+
+        <div className='vdb-side'>
+          <Header />
+        </div>
+
+
+        {/*<h1>App</h1>
         <ul>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
-          {/*<img src={img} />*/}
-        </ul>
+
+        </ul>*/}
       </section>
     )
   }
