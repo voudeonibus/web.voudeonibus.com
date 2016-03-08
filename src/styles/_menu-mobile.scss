@@ -1,0 +1,26 @@
+.vdb-menu {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 10%;
+  bottom: 0;
+  padding: 1rem;
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+  transform: translateX(-105%);
+  &.active {
+    transform: translateX(0);
+  }
+  button {
+    position: absolute;
+    right: -100%;
+  }
+}
+
+.vdb-search-box  {
+  margin-top: 0;
+}
+
+.vdb-line-list {
+  height: auto !important;
+}
