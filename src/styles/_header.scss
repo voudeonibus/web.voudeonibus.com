@@ -14,3 +14,18 @@
     height: auto;
   }
 }
+
+
+// mobile
+@media screen and (max-width: 640px) {
+
+  .vdb-header {
+    height: auto;
+    background: $brand;
+  }
+
+  .vdb-title {
+    width: 50%;
+    padding: 1rem 0;
+  }
+}
