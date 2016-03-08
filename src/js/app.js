@@ -19,6 +19,11 @@ export default class App extends Component {
           <Header />
         </div>
 
+        <div className='vdb-wrap'>
+          <div className='vdb-wrap-container'>
+          </div>
+        </div>
+
 
         {/*<h1>App</h1>
         <ul>

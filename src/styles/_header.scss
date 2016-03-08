@@ -1,12 +1,14 @@
 .vdb-header {
   height: $top-height;
+  position: relative;
 }
 
 .vdb-title {
   display: block;
   margin: 0 auto;
   padding: 2rem 0 1rem;
-  width: 10rem;
+  width: 90%;
+  max-width: 10rem;
   img {
     width: 100%;
     height: auto;

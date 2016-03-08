@@ -1,16 +1,11 @@
 @import '../../node_modules/normalize.css/normalize';
 
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
-}
-
 * {
   box-sizing: border-box;
 }
-
 html {
   font: 16px/1.4 "Lato", sans-serif;
+  height: 100%;
 }
 
 // dimensions
