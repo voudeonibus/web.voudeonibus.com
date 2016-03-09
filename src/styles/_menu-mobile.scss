@@ -1,14 +1,14 @@
 .vdb-menu {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: -100%;
   bottom: 0;
-  transform: translateX(-105%);
-  transition: transform .5s ease-in;
+  width: 100%;
+  transition: left .3s ease-in;
+  z-index: 999;
   &.vdb-menu-active {
-    transform: translateX(0);
-    transition: transform .5s ease-out;
+    left: 0;
+    transition: left .3s ease-out;
   }
 }
 .vdb-menu-wrap {
@@ -47,7 +47,7 @@
   border: 0;
   padding: 0;
   z-index: -1;
-  transition: opacity .7s ease-out;
+  transition: opacity .4s ease-out;
   span {
     display: none;
   }
@@ -56,7 +56,7 @@
   opacity: .5;
   width: 1000%;
   right: -100%;
-  transition: opacity .7s ease-out;
+  transition: opacity .4s ease-out;
 }
 
 .vdb-search-box  {
