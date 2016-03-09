@@ -51,6 +51,7 @@ body {
 // mobile
 @media screen and (max-width: 640px) {
   body {
+    overflow-x: hidden;
    &:before {
     display: none;
    }

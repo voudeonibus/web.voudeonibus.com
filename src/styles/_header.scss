@@ -15,6 +15,9 @@
   }
 }
 
+.vdb-menu-action {
+  display: none;
+}
 
 // mobile
 @media screen and (max-width: 640px) {
@@ -26,6 +29,10 @@
 
   .vdb-title {
     width: 50%;
-    padding: 1rem 0;
+    padding: 0.8rem 0 1rem;
+  }
+
+  .vdb-menu-action {
+    display: block;
   }
 }
