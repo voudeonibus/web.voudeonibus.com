@@ -15,11 +15,13 @@ export default class App extends Component {
       menuOpen: false
     }
   }
+
   handleMenu () {
     this.setState({
       menuOpen: !this.state.menuOpen
     })
   }
+
   render () {
     return (
       <section className='container'>
@@ -29,11 +31,11 @@ export default class App extends Component {
           <button onClick={this.handleMenu.bind(this)} className='vdb-menu-open vdb-menu-action'><span>Open menu</span></button>
 
           <div className={this.state.menuOpen ? 'vdb-menu vdb-menu-active' : 'vdb-menu'}>
-              <div className='vdb-menu-wrap'>
-                <BoxSearch />
-                <LineList />
-              </div>
-              <button onClick={this.handleMenu.bind(this)} className='vdb-menu-close vdb-menu-action'><span>Close menu</span></button>
+            <div className='vdb-menu-wrap'>
+              <BoxSearch />
+              <LineList />
+            </div>
+            <button onClick={this.handleMenu.bind(this)} className='vdb-menu-close vdb-menu-action'><span>Close menu</span></button>
           </div>
         </div>
 
