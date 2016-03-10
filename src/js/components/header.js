@@ -5,7 +5,7 @@ import VoudeOnibusHorizontalPng from '../../img/voudeonibus-horizontal.png'
 
 export default class About extends Component {
   render () {
-    const imgs = VoudeOnibusHorizontalPng+' 640w, '+VoudeOnibusPng+' 800w';
+    const imgs = `${VoudeOnibusHorizontalPng} 640w, ${VoudeOnibusPng} 800w`
     return (
       <header className='vdb-header'>
         <h1 className='vdb-title'>
