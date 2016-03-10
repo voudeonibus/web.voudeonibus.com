@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-import VoudeOnibusPng from '../../img/voudeonibus.png'
-
 export default class LineList extends Component {
   render () {
     return (
