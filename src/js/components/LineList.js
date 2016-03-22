@@ -76,6 +76,18 @@ export default class LineList extends Component {
             Três Rios
           </a>
         </li>
+        <li className='vdb-line-list_item vdb-favorite'>
+          <a href=''>
+            <span className='number'><span>200</span></span>
+            Três Rios
+          </a>
+        </li>
+        <li className='vdb-line-list_item vdb-favorite'>
+          <a href=''>
+            <span className='number'><span>200</span></span>
+            Três Rios
+          </a>
+        </li>
       </ul>
     )
   }

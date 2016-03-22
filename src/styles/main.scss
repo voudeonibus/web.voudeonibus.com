@@ -8,9 +8,10 @@
 // header
 @import '_header';
 @import '_BoxSearch';
-@media screen and (max-width: 640px) {
-  @import '_menu-mobile';
-}
 
 // components
 @import '_LineList';
+
+@media screen and (max-width: 640px) {
+  @import '_menu-mobile';
+}
