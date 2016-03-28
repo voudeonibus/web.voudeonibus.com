@@ -5,10 +5,12 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import Header from './components/header'
 import BoxSearch from './components/BoxSearch'
 import LineList from './components/LineList'
+import LineItem from './components/LineItem'
 
 import '../styles/main.scss'
 
 export default class App extends Component {
+
   constructor (props) {
     super(props)
     this.state = {
@@ -41,6 +43,7 @@ export default class App extends Component {
 
         <div className='vdb-wrap'>
           <div className='vdb-wrap-container'>
+            <LineItem />
           </div>
         </div>
 

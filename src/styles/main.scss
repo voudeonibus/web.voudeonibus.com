@@ -11,6 +11,7 @@
 
 // components
 @import '_LineList';
+@import '_LineItem';
 
 @media screen and (max-width: 640px) {
   @import '_menu-mobile';

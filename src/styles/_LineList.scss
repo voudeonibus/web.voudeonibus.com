@@ -3,25 +3,27 @@
   background: $color;
   @if $color == $brand {
     color: white;
-  } else {
+  } @else {
     color: $brand;
   }
   font-size: $size;
   padding: 0 $size/2;
+  float: left;
   margin-right: 1rem;
-  line-height: $size;
+  line-height: $size*1.5;
+  vertical-align: bottom;
   position: relative;
-  vertical-align: middle;
+  top: .2rem;
   &:before {
     content: "";
     display: block;
     width: 0;
     height: 0;
-    border: $size*1.2 solid transparent;
-    border-bottom: $size*1.2 solid $color;
+    border: $size*1.5 solid transparent;
+    border-bottom: $size*1.5 solid $color;
     position: absolute;
-    top: -$size*1.2;
-    right: -$size*1.2;
+    top: -$size*1.5;
+    right: -$size*1.5;
   }
   span {
     position: relative;
@@ -62,7 +64,6 @@
 .vdb-line-list_item {
   list-style: none;
   border-bottom: 1px solid $gray-low;
-  line-height: 2.5rem;
   position: relative;
 
   // label number
@@ -72,6 +73,7 @@
 
   // link
   a {
+    padding: .5rem 0;
     display: block;
     text-decoration: none;
     font-size: 1rem;
@@ -88,7 +90,7 @@
     border-top: 2px solid $gray-low;
     transform: rotate(45deg);
     position: absolute;
-    top: 1.1em;
+    top: 1em;
     right: 1em;
     transition: all .3s ease;
   }

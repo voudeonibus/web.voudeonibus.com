@@ -1,0 +1,43 @@
+.vdb-line-item-header {
+  height: $top-height - 1rem;
+  background-size: cover;
+  position: relative;
+}
+
+
+.vdb-line-item-header_infos {
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+
+  .name, .price {
+    color: white;
+    line-height: 1;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .number {
+    @include flag-number(#fff, 1rem);
+    font-weight: normal;
+    margin-right: 2rem;
+    top: 0;
+  }
+
+  .name {
+    float: left;
+    font-size: 1.5em;
+  }
+
+  .price {
+    float: right;
+    position: relative;
+    top: .6rem;
+  }
+}
