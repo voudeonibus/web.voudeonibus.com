@@ -10,7 +10,7 @@ export default class Header extends Component {
     return (
       <header className='vdb-header'>
         <h1 className='vdb-title'>
-          <img alt='Your picture description' srcSet={imgs} />
+          <img alt='Vou de ônibus' srcSet={imgs} />
         </h1>
       </header>
     )
