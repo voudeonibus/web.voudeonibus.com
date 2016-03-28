@@ -58,7 +58,7 @@ body {
     overflow-x: hidden;
     height: 800px;
    &:before {
-    display: none;
+    height: $top-height - 6rem;
    }
   }
   .container {
