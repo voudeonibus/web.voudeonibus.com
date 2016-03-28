@@ -34,7 +34,7 @@ body {
 
 .vdb-wrap {
   lost-column: 8.5/12;
-  padding: 1em;
+  padding: 1em 0 1em 1em;
   height: 100%;
 }
 .vdb-wrap-container {
@@ -46,7 +46,11 @@ body {
 }
 
 
-
+@media screen and (max-width: 870px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
 
 // mobile
 @media screen and (max-width: 640px) {
