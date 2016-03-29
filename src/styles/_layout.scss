@@ -46,14 +46,14 @@ body {
 }
 
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: $m-point) {
   .container {
     padding: 0 1rem;
   }
 }
 
 // mobile
-@media screen and (max-width: 640px) {
+@media screen and (max-width: $s-point) {
   body, html {
     overflow-x: hidden;
     height: 800px;

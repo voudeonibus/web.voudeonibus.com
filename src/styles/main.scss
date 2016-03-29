@@ -2,17 +2,12 @@
 
 @import '_base';
 
-// layout
+// Layout
 @import '_layout';
+// |- Header
+@import '_mainHeader';;
 
-// header
-@import '_header';
-@import '_BoxSearch';
-
-// components
+// Components
 @import '_LineList';
 @import '_LineItem';
 
-@media screen and (max-width: 640px) {
-  @import '_menu-mobile';
-}

@@ -43,7 +43,7 @@
 }
 
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: $s-point) {
   .vdb-line-item-header {
     height: $top-height - 7rem;
   }
