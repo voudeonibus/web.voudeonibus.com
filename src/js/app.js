@@ -51,12 +51,3 @@ export default class App extends Component {
     )
   }
 }
-
-render((
-    <Router history={browserHistory}>
-    <Route path='/' component={App}>
-      <IndexRoute component={App} />
-    </Route>
-  </Router>),
-  document.getElementById('the__root')
-)
