@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
-import { render } from 'react-dom'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import Header from './components/header'
 import BoxSearch from './components/BoxSearch'
 import LineList from './components/LineList'
 import LineItem from './components/LineItem'
-
-import '../styles/main.scss'
 
 export default class App extends Component {
 
