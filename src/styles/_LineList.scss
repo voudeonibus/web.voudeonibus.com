@@ -14,6 +14,7 @@
   vertical-align: bottom;
   position: relative;
   top: .2rem;
+  transition: $ts;
   &:before {
     content: "";
     display: block;
@@ -24,6 +25,7 @@
     position: absolute;
     top: -$size*1.5;
     right: -$size*1.5;
+    transition: $ts;
   }
   span {
     position: relative;
