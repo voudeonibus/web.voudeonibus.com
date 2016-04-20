@@ -10,7 +10,9 @@ export default class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      menuOpen: false
+      menuOpen: false,
+      scroll: 0,
+      scrollTop: false
     }
   }
 
@@ -18,6 +20,26 @@ export default class App extends Component {
     this.setState({
       menuOpen: !this.state.menuOpen
     })
+  }
+
+  handleScroll (target) {
+      let thisScroll = target.target.scrollTop;
+      let endHeader = 75;
+      let scrollRatio = (thisScroll*endHeader)/100;
+
+      this.setState({
+        scroll: scrollRatio
+      })
+
+      if(scrollRatio > 100) {
+        this.setState({
+          scrollTop: true
+        })
+      } else {
+        this.setState({
+          scrollTop: false
+        })
+      }
   }
 
   render () {
@@ -38,8 +60,8 @@ export default class App extends Component {
         </div>
 
         <div className='vdb-wrap'>
-          <div className='vdb-wrap-container'>
-            <LineItem />
+          <div className='vdb-wrap-container' onScroll={this.handleScroll.bind(this)}>
+            <LineItem scrollWrap={this.state.scroll} scrollPosition={this.state.scrollTop} />
           </div>
         </div>
 

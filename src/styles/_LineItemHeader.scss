@@ -1,7 +1,37 @@
+.vdb-line-item-header_container {
+  height: $top-height - 1rem;
+  // position: relative;
+}
+
 .vdb-line-item-header {
   height: $top-height - 1rem;
   background-size: cover;
   position: relative;
+  width: 100%;
+  border-bottom: 1px solid transparent;
+  &.is-top {
+    border-bottom: 1px solid $gray-low;
+    position: absolute;
+    height: 5.5rem;
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+    overflow: hidden;
+    .vdb-line-item-header_infos:after {
+      transition: $ts;
+      opacity: 0;
+    }
+    .name, .price {
+      transition: $ts;
+      color: $brand;
+    }
+    .number {
+      background: $brand;
+      color: white;
+      &:before {
+        border-bottom: 1.5rem solid $brand;
+      }
+    }
+  }
 }
 
 
@@ -11,16 +41,28 @@
   left: 0;
   right: 0;
   bottom: 0;
-
-  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
-  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+  .fade {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+    transition: $ts;
+  }
 
   .name, .price {
     color: white;
     line-height: 1;
     font-weight: 300;
     margin: 0;
+    position: relative;
+    z-index: 9;
+    transition: $ts;
   }
 
   .number {
@@ -42,6 +84,14 @@
   }
 }
 
+.vdb-line-item-header_scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  background: #fff;
+}
 
 @media screen and (max-width: $s-point) {
   .vdb-line-item-header {

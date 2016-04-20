@@ -43,6 +43,19 @@ body {
   background: #FFFFFF;
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
   border-radius: .2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.vdb-wrap-scroll {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.vdb-wrap-table {
+  height: 100%;
+  width: 100%;
 }
 
 
