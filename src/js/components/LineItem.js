@@ -9,7 +9,8 @@ export default class LineItem extends Component {
     return (
       <div className='vdb-wrap-scroll'>
         <LineItemHeader scroll={this.props.scrollWrap} scrollTop={this.props.scrollPosition} />
-        <div className='vdb-wrap-table'></div>
+        <div className='vdb-wrap-table'>
+        </div>
       </div>
     )
   }
