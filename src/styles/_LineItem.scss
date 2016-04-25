@@ -1,1 +1,14 @@
-@import 'LineItemHeader'
+@import 'LineItemHeader';
+
+
+.headroom {
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  height: 4rem;
+  &:not(.headroom--unfixed) {
+    top: 5.5rem !important;
+    position: absolute !important;
+  }
+}
+

@@ -16,6 +16,7 @@
     border-top-left-radius: .2rem;
     border-top-right-radius: .2rem;
     overflow: hidden;
+    z-index: 9;
     .vdb-line-item-header_infos:after {
       transition: $ts;
       opacity: 0;

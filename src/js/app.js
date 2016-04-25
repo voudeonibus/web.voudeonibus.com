@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Header from './components/header'
 import BoxSearch from './components/BoxSearch'
-import LineList from './components/LineList'
+import Sidebar from './components/Sidebar'
 import LineItem from './components/LineItem'
 
 export default class App extends Component {
@@ -53,7 +53,7 @@ export default class App extends Component {
           <div className={this.state.menuOpen ? 'vdb-menu vdb-menu-active' : 'vdb-menu'}>
             <div className='vdb-menu-wrap'>
               <BoxSearch />
-              <LineList />
+              <Sidebar />
             </div>
             <button onClick={this.handleMenu.bind(this)} className='vdb-menu-close vdb-menu-action'><span>Close menu</span></button>
           </div>
