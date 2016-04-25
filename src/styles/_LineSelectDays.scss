@@ -1,0 +1,38 @@
+.headroom {
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 100%;
+  &:not(.headroom--unfixed) {
+    top: 5.5rem !important;
+    position: absolute !important;
+  }
+}
+
+
+.vdb-line-select-days {
+  width: 100%;
+  border-bottom: 1px solid $gray-low;
+  text-align: center;
+  a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 300;
+    color: $brand;
+    padding: .5rem 0 0;
+    width: 33.3333%;
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      border-bottom: 3px solid transparent;
+      padding: .5rem 0 0;
+      transition: $ts;
+    }
+  }
+  .day-selected:after {
+    transition: $ts;
+    border-bottom: 3px solid $brand;
+  }
+}
+

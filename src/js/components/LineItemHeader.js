@@ -9,7 +9,7 @@ export default class LineItemHeader extends Component {
   render () {
     return (
       <div className='vdb-line-item-header_container'>
-        <div className={this.props.lineItemTop ? 'vdb-line-item-header is-top' : 'vdb-line-item-header'} style={{backgroundImage: 'url('+HeaderPlaceholder+')'}}>
+        <div className={this.props.lineItemTop ? 'vdb-line-item-header is-top' : 'vdb-line-item-header'} style={{backgroundImage: `url(${HeaderPlaceholder})`}}>
           <div className='vdb-line-item-header_scroll' style={{opacity: this.props.lineItemScroll/100}}></div>
           <div className='vdb-line-item-header_infos'>
             <h3 className='name'>
