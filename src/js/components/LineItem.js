@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 
 import LineItemHeader from '../components/LineItemHeader'
-import LineItemDays from '../components/LineItemDays'
+import LineSelectDays from '../components/LineSelectDays'
 import Headroom from 'react-headroom'
 
+
 export default class LineItem extends Component {
+
+  constructor (props) {
+    super(props)
+  }
 
   render () {
     return (
@@ -14,9 +19,7 @@ export default class LineItem extends Component {
           disable={this.props.scrollPosition ? false : true}
           parent={() =>  document.getElementById('headRoom') }
         >
-          {this.props.scrollPosition}
-          <LineItemDays />
-          }
+          <LineSelectDays />
         </Headroom>
 
         <div className='vdb-wrap-table'>
