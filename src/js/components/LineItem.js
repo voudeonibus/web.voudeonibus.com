@@ -14,9 +14,9 @@ export default class LineItem extends Component {
   render () {
     return (
       <div id='headRoom' className='vdb-wrap-scroll'>
-        <LineItemHeader scroll={this.props.scrollWrap} scrollTop={this.props.scrollPosition} />
+        <LineItemHeader {...this.props} />
         <Headroom
-          disable={this.props.scrollPosition ? false : true}
+          disable={this.props.lineItemTop ? false : true}
           parent={() =>  document.getElementById('headRoom') }
         >
           <LineSelectDays />
