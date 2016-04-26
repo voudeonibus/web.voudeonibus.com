@@ -10,7 +10,7 @@ export default class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      searchQ: "Três",
+      searchQ: "",
       menuOpen: false,
       lineItemScroll: 0,
       lineItemTop: false

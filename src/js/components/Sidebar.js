@@ -65,7 +65,7 @@ export default class LineList extends Component {
         });
     } else {
         filterData = listLines.filter(function(l){
-            return l.lineName.match( searchString );
+            return l.lineNumber.match( searchString );
         });
     }
 
