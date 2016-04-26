@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import _ from 'lodash'
 import classNames from 'classnames'
 
 let listLines = [
@@ -60,7 +61,7 @@ export default class LineList extends Component {
     let searchString = this.props.searchQ;
     if(isNaN(searchString)){
         filterData = listLines.filter(function(l){
-            return l.lineName.match( searchString );
+          return _.deburr(l.lineName.toLowerCase()).match(_.deburr(searchString.toLowerCase()))
         });
     } else {
         filterData = listLines.filter(function(l){

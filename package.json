@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "express": "^4.13.4",
+    "lodash": "^4.11.1",
     "normalize-scss": "^4.0.3",
     "normalize.css": "^4.1.1",
     "qs": "^6.1.0",
