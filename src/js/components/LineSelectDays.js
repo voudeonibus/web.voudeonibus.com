@@ -6,7 +6,7 @@ let menuItems = [
   { menuItem: "Domingos e feriados" }
 ];
 
-class MenuItem extends Component {
+class MenuItemDays extends Component {
    render(){
      return (
         <a href='javascript:void(0);' className={this.props.active ? 'day-selected' : ''} onClick={this.props.onClick}>{this.props.label}</a>
@@ -35,7 +35,7 @@ export default class LineSelectDays extends Component {
     return (
       <div className='vdb-line-select-days'>
         {menuItems.map((item, index) => {
-           return <MenuItem label={item.menuItem}
+           return <MenuItemDays label={item.menuItem}
                   key={index}
                   onClick={this.handleDays.bind(this, index)}
                   active={this.state.selectedIndex === index} />
