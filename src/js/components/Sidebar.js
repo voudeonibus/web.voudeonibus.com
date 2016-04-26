@@ -56,9 +56,21 @@ export default class LineList extends Component {
   }
 
   render () {
+    let filterData;
+    let searchString = this.props.searchQ;
+    if(isNaN(searchString)){
+        filterData = listLines.filter(function(l){
+            return l.lineName.match( searchString );
+        });
+    } else {
+        filterData = listLines.filter(function(l){
+            return l.lineName.match( searchString );
+        });
+    }
+
     return (
       <ul className='vdb-line-list'>
-        {listLines.map((item, index) => {
+        {filterData.map((item, index) => {
            return <MenuItemLines content={item}
                   key={index}
                   onClick={this.handleLines.bind(this, index)}

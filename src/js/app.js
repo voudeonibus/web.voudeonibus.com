@@ -10,6 +10,7 @@ export default class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      searchQ: "Três",
       menuOpen: false,
       lineItemScroll: 0,
       lineItemTop: false
@@ -52,8 +53,8 @@ export default class App extends Component {
 
           <div className={this.state.menuOpen ? 'vdb-menu vdb-menu-active' : 'vdb-menu'}>
             <div className='vdb-menu-wrap'>
-              <BoxSearch />
-              <Sidebar />
+              <BoxSearch searchQ={this.state.searchQ} />
+              <Sidebar searchQ={this.state.searchQ} />
             </div>
             <button onClick={this.handleMenu.bind(this)} className='vdb-menu-close vdb-menu-action'><span>Close menu</span></button>
           </div>

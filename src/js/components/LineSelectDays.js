@@ -14,7 +14,6 @@ class MenuItemDays extends Component {
    }
 }
 
-
 export default class LineSelectDays extends Component {
 
   constructor (props) {
