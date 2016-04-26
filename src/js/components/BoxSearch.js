@@ -9,6 +9,13 @@ export default class BoxSearch extends Component {
     }
   }
 
+  componentWillUpdate (nextProps, nextState) {
+    if (nextState.searchQ !== this.state.searchQ) {
+      const { onChange } = this.props
+      onChange && onChange(nextState.searchQ)
+    }
+  }
+
   handleSearch(input) {
     let inputVal = input.target.value
     this.setState({

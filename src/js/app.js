@@ -43,6 +43,12 @@ export default class App extends Component {
       }
   }
 
+  onChangeBoxSearch (value) {
+    this.setState({
+      searchQ: value
+    })
+  }
+
   render () {
     return (
       <section className='container'>
@@ -53,7 +59,7 @@ export default class App extends Component {
 
           <div className={this.state.menuOpen ? 'vdb-menu vdb-menu-active' : 'vdb-menu'}>
             <div className='vdb-menu-wrap'>
-              <BoxSearch searchQ={this.state.searchQ} />
+              <BoxSearch searchQ={this.state.searchQ} onChange={this.onChangeBoxSearch.bind(this)} />
               <Sidebar searchQ={this.state.searchQ} />
             </div>
             <button onClick={this.handleMenu.bind(this)} className='vdb-menu-close vdb-menu-action'><span>Close menu</span></button>
