@@ -9,7 +9,7 @@ let listLines = [
   ,{ lineName: "Sábado", lineNumber: "100"  }
   ,{ lineName: "Sábado", lineNumber: "100"  }
   ,{ lineName: "Sábado", lineNumber: "100"  }
-  ,{ lineName: "Domingos e feriados", lineNumber: "100"  }
+  ,{ lineName: "Dômingís e feriados", lineNumber: "999"  }
   ,{ lineName: "Domingos e feriados", lineNumber: "100"  }
   ,{ lineName: "Domingos e feriados", lineNumber: "100"  }
   ,{ lineName: "Domingos e feriados", lineNumber: "100"  }
@@ -57,7 +57,7 @@ export default class LineList extends Component {
   }
 
   render () {
-    let filterData;
+    let filterData, contentLines;
     let searchString = this.props.searchQ;
     if(isNaN(searchString)){
         filterData = listLines.filter(function(l){
@@ -69,15 +69,20 @@ export default class LineList extends Component {
         });
     }
 
+    if(filterData.length) {
+      contentLines = filterData.map((item, index) => {
+        return <MenuItemLines content={item}
+              key={index}
+              onClick={this.handleLines.bind(this, index)}
+              active={this.state.selectedIndex === index} />
+      })
+    } else {
+      contentLines = <li className='not-found'>Nenhum resultado encontrado <span><span>:</span>(</span></li>
+    }
+
     return (
       <ul className='vdb-line-list'>
-        {filterData.map((item, index) => {
-           return <MenuItemLines content={item}
-                  key={index}
-                  onClick={this.handleLines.bind(this, index)}
-                  active={this.state.selectedIndex === index} />
-          }
-        )}
+        {contentLines}
       </ul>
     )
   }

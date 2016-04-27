@@ -68,7 +68,6 @@ body {
 // mobile
 @media screen and (max-width: $s-point) {
   body, html {
-    overflow-x: hidden;
     height: 800px;
    &:before {
     height: $top-height - 6rem;
