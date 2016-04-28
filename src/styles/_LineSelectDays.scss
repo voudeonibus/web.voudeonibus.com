@@ -21,6 +21,7 @@
     color: $brand;
     padding: .5rem 0 0;
     width: 33.3333%;
+    white-space: nowrap;
     &:after {
       content: "";
       display: block;
@@ -35,4 +36,20 @@
     border-bottom: 3px solid $brand;
   }
 }
-
+@media screen and (max-width: $s-point) {
+  .headroom {
+    overflow: auto;
+    &:not(.headroom--unfixed) {
+      top: 2.5rem !important;
+    }
+  }
+  .vdb-line-select-days {
+    width: 130%;
+    white-space: nowrap;
+    text-align: left;
+    a {
+      width: auto;
+      padding: .5rem 1rem 0 1rem;
+    }
+  }
+}

@@ -81,7 +81,7 @@
   .price {
     float: right;
     position: relative;
-    top: .6rem;
+    top: .5rem;
   }
 }
 
@@ -95,7 +95,8 @@
 }
 
 @media screen and (max-width: $s-point) {
-  .vdb-line-item-header {
+  .vdb-line-item-header,
+  .vdb-line-item-header_container {
     height: $top-height - 7rem;
   }
   .vdb-line-item-header_infos {

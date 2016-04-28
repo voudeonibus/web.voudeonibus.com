@@ -25,6 +25,10 @@ body {
   position: relative;
 }
 
+.container.is-menu-open {
+  overflow: hidden;
+}
+
 @lost gutter .5rem;
 
 .vdb-side {
@@ -68,7 +72,6 @@ body {
 // mobile
 @media screen and (max-width: $s-point) {
   body, html {
-    height: 800px;
    &:before {
     height: $top-height - 6rem;
    }
@@ -84,7 +87,7 @@ body {
     lost-column: 12/12;
     padding: 0;
     height: auto;
-    padding: 1em;
+    padding: .5rem;
   }
   .vdb-wrap-container {
     min-height: 100px;

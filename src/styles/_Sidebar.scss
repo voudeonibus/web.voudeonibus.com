@@ -65,7 +65,7 @@
     color: $gray;
     font-size: 1em;
     list-style: none;
-    padding: 1rem 2rem;
+    padding: .48rem 2.5rem;
     border-bottom: 1px solid $gray-low;
     border-radius: 5px;
     font-weight: 300;
@@ -164,6 +164,11 @@
     }
   }
 
+  .vdb-line-list {
+    -webkit-overflow-scrolling: touch;
+    height: calc(100% - 43px - 1rem);
+  }
+
   .vdb-menu-list {
     height: 100%;
   }
@@ -174,7 +179,7 @@
     background: url(../img/menu.svg) center/cover no-repeat;
     border: 0;
     position: absolute;
-    left: 1rem;
+    left: .5rem;
     top: 1.7rem;
     span {
       display: none;

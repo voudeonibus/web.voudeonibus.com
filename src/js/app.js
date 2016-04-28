@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 
 import Header from './components/header'
 import BoxSearch from './components/BoxSearch'
 import Sidebar from './components/Sidebar'
 import LineItem from './components/LineItem'
+
 
 export default class App extends Component {
 
@@ -24,6 +26,7 @@ export default class App extends Component {
   }
 
   handleScroll (targetScroll) {
+    console.log
       let thisScroll = targetScroll.target.scrollTop;
       let header = 75;
       let scrollRatio = (thisScroll*header)/100;
@@ -50,8 +53,14 @@ export default class App extends Component {
   }
 
   render () {
+
+    let containerClass = classNames ({
+      'container': true,
+      'is-menu-open': this.state.menuOpen
+    });
+
     return (
-      <section className='container'>
+      <section className={containerClass}>
 
         <div className='vdb-side'>
           <Header />
@@ -62,12 +71,12 @@ export default class App extends Component {
               <BoxSearch searchQ={this.state.searchQ} onChange={this.onChangeBoxSearch.bind(this)} />
               <Sidebar searchQ={this.state.searchQ} />
             </div>
-            <button onClick={this.handleMenu.bind(this)} className='vdb-menu-close vdb-menu-action'><span>Close menu</span></button>
+            <button onTouchEnd={this.handleMenu.bind(this)} onClick={this.handleMenu.bind(this)} className='vdb-menu-close vdb-menu-action'><span>Close menu</span></button>
           </div>
         </div>
 
         <div className='vdb-wrap'>
-          <div className='vdb-wrap-container' onScroll={this.handleScroll.bind(this)}>
+          <div className='vdb-wrap-container'>
             <LineItem lineItemScroll={this.state.lineItemScroll} lineItemTop={this.state.lineItemTop} />
           </div>
         </div>

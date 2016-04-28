@@ -21,7 +21,6 @@ export default class LineItem extends Component {
         >
           <LineSelectDays />
         </Headroom>
-
         <div className='vdb-wrap-table'>
         </div>
       </div>
