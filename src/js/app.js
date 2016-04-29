@@ -76,7 +76,7 @@ export default class App extends Component {
         </div>
 
         <div className='vdb-wrap'>
-          <div className='vdb-wrap-container'>
+          <div className='vdb-wrap-container' onScroll={this.handleScroll.bind(this)}>
             <LineItem lineItemScroll={this.state.lineItemScroll} lineItemTop={this.state.lineItemTop} />
           </div>
         </div>
