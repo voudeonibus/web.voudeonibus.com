@@ -17,6 +17,7 @@
     border-top-right-radius: .2rem;
     overflow: hidden;
     z-index: 9;
+    will-change: transform;
     .vdb-line-item-header_infos:after {
       transition: $ts;
       opacity: 0;
@@ -42,6 +43,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  will-change: transform;
   .fade {
     content: "";
     display: block;
@@ -95,9 +97,20 @@
 }
 
 @media screen and (max-width: $s-point) {
+  .vdb-wrap {
+    height: calc(100% - 3.5rem);
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
   .vdb-line-item-header,
   .vdb-line-item-header_container {
     height: $top-height - 7rem;
+    -webkit-backface-visibility: hidden;
+    -webkit-will-change: transform;
+    &.is-top {
+      height: 2.5rem;
+    }
   }
   .vdb-line-item-header_infos {
     padding: .5rem;

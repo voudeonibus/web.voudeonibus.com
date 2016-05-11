@@ -31,9 +31,11 @@ export default class App extends Component {
       let header = 75;
       let scrollRatio = (thisScroll*header)/100;
 
-      this.setState({
-        lineItemScroll: scrollRatio
-      })
+      if(scrollRatio <= 120) {
+        this.setState({
+          lineItemScroll: scrollRatio
+        })
+      }
 
       if(scrollRatio > 100) {
         this.setState({

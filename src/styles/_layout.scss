@@ -1,3 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font: 16px/1.4 "Lato", sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   background: $bg;
   height: 100%;
@@ -58,7 +67,7 @@ body {
 }
 
 .vdb-wrap-table {
-  height: 100%;
+  // height: 100%;
   width: 100%;
 }
 
@@ -72,9 +81,10 @@ body {
 // mobile
 @media screen and (max-width: $s-point) {
   body, html {
-   &:before {
-    height: $top-height - 6rem;
-   }
+    overflow: visible;
+    &:before {
+      height: $top-height - 6rem;
+    }
   }
   .container {
     padding: 0;
@@ -86,7 +96,7 @@ body {
   .vdb-wrap {
     lost-column: 12/12;
     padding: 0;
-    height: auto;
+    // height: auto;
     padding: .5rem;
   }
   .vdb-wrap-container {
