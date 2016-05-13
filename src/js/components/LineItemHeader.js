@@ -14,8 +14,8 @@ export default class LineItemHeader extends Component {
           <div className='vdb-line-item-header_scroll' style={{opacity: this.props.lineItemScroll / 100}}></div>
           <div className='vdb-line-item-header_infos'>
             <h3 className='name'>
-              <span className='number'><span>200</span></span>
-              Boa vista
+              <span className='number'><span>{this.props.line.lineNumber}</span></span>
+              {this.props.line.lineName}
             </h3>
             <p className='price'>R$ 3,40</p>
           </div>

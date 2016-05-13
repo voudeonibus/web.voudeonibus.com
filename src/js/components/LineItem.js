@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Router, Route, Link, browserHistory } from 'react-router'
+import _ from 'lodash'
 
 import LineItemHeader from '../components/LineItemHeader'
 import LineSelectDays from '../components/LineSelectDays'
@@ -12,10 +13,23 @@ export default class LineItem extends Component {
     super(props)
   }
 
+  getLineCurrent () {
+    let line = _.filter(window.api[0].lines, {lineNumber: this.props.params.id})
+    if (line.length > 0) {
+      return line[0]
+    } else {
+      false
+    }
+  }
+
   render () {
+
+
+    let line = this.getLineCurrent()
+
     return (
       <div id='headRoom' className='vdb-wrap-scroll'>
-        <LineItemHeader {...this.context} />
+        <LineItemHeader {...this.context} line={line} />
         <Headroom
           disable={this.context.lineItemTop ? false : true}
           parent={() => document.getElementById('headRoom') }
