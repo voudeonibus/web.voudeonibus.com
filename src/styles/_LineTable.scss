@@ -1,5 +1,6 @@
 .vdb-wrap-table {
   padding: 1rem;
+  animation: slideDown .3s ease;
   &:after {
     content: "";
     display: block;

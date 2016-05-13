@@ -9,6 +9,7 @@
   position: relative;
   width: 100%;
   border-bottom: 1px solid transparent;
+  animation: slideUp .3s ease;
   &.is-top {
     border-bottom: 1px solid $gray-low;
     position: absolute;

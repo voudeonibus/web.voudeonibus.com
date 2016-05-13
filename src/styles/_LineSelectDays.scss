@@ -4,6 +4,7 @@
   bottom: auto !important;
   width: 100%;
   background: #fff;
+  animation: slideUp .3s ease;
   &:not(.headroom--unfixed) {
     top: 5.5rem !important;
     position: absolute !important;

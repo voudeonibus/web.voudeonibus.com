@@ -15,6 +15,7 @@ render((
     <Route path='/' component={App}>
       <IndexRoute component={LineClean} />
       <Route path='/:id' component={LineItem} />
+      <Route path='*' component={LineClean} />
     </Route>
   </Router>),
   document.getElementById('the__root')
