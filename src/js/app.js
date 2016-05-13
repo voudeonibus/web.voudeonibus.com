@@ -8,13 +8,12 @@ import Sidebar from './components/Sidebar'
 import LineItem from './components/LineItem'
 import LineClean from './components/LineClean'
 
-
 export default class App extends Component {
 
   constructor (props) {
     super(props)
     this.state = {
-      searchQ: "",
+      searchQ: '',
       menuOpen: false,
       lineItemScroll: 0,
       lineItemTop: false
@@ -29,23 +28,23 @@ export default class App extends Component {
 
   handleScroll (targetScroll) {
     console.log
-      let thisScroll = targetScroll.target.scrollTop;
-      let header = 75;
-      let scrollRatio = (thisScroll*header)/100;
+    let thisScroll = targetScroll.target.scrollTop
+    let header = 75
+    let scrollRatio = (thisScroll * header) / 100
 
+    this.setState({
+      lineItemScroll: scrollRatio
+    })
+
+    if (scrollRatio > 100) {
       this.setState({
-        lineItemScroll: scrollRatio
+        lineItemTop: true
       })
-
-      if(scrollRatio > 100) {
-        this.setState({
-          lineItemTop: true
-        })
-      } else {
-        this.setState({
-          lineItemTop: false
-        })
-      }
+    } else {
+      this.setState({
+        lineItemTop: false
+      })
+    }
   }
 
   onChangeBoxSearch (value) {
@@ -56,11 +55,10 @@ export default class App extends Component {
   }
 
   render () {
-
-    let containerClass = classNames ({
+    let containerClass = classNames({
       'container': true,
       'is-menu-open': this.state.menuOpen
-    });
+    })
 
     return (
       <section className={containerClass}>
