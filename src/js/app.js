@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
+import { Router, Route, Link, browserHistory } from 'react-router'
 
 import Header from './components/header'
 import BoxSearch from './components/BoxSearch'
 import Sidebar from './components/Sidebar'
 import LineItem from './components/LineItem'
+import LineClean from './components/LineClean'
 
 
 export default class App extends Component {
@@ -77,7 +79,10 @@ export default class App extends Component {
 
         <div className='vdb-wrap'>
           <div className='vdb-wrap-container' onScroll={this.handleScroll.bind(this)}>
-            <LineItem lineItemScroll={this.state.lineItemScroll} lineItemTop={this.state.lineItemTop} />
+            <Router history={browserHistory}>
+              <Route path='/' component={LineClean} />
+              <Route path='linha' component={LineItem} lineItemScroll={this.state.lineItemScroll} lineItemTop={this.state.lineItemTop} />
+            </Router>
           </div>
         </div>
 

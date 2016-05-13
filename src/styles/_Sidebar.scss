@@ -96,7 +96,6 @@
     display: inline-block;
     color: $brand;
     text-decoration: none;
-    margin: 0 2px;
     font-size: 1em;
     &:hover {
       text-decoration: underline;
@@ -104,22 +103,12 @@
   }
 }
 
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .vdb-line-list_item {
   list-style: none;
   border-bottom: 1px solid $gray-low;
   position: relative;
-  animation: slideDown .3s ease;
+  animation: fade .3s ease;
   // label number
   .number {
     @include flag-number($brand, .6rem);
@@ -239,5 +228,24 @@
   }
 }
 
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 

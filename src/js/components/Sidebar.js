@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 import classNames from 'classnames'
+import { Router, Route, Link, browserHistory } from 'react-router'
 
 let listLines = [
   { lineName: "Três Rios", lineNumber: "100"  }
@@ -22,7 +23,7 @@ let listLines = [
   ,{ lineName: "Czerniewicz", lineNumber: "100"  }
 ];
 
-let strangeNames = ["Schroeder","Kohlbach","Czerniewicz","Corticeira","Sei lá"]
+let strangeNames = ["Schroeder","Kohlbach","Czerniewicz","Corticeira","Sei lá","Woznica"]
 
 class MenuItemLines extends Component {
   render(){
@@ -33,12 +34,30 @@ class MenuItemLines extends Component {
       'vdb-line-active': this.props.active
     });
 
+    var slug = function(str) {
+      str = str.replace(/^\s+|\s+$/g, ''); // trim
+      str = str.toLowerCase();
+
+      // remove accents, swap ñ for n, etc
+      var from = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;";
+      var to   = "aaaaaeeeeeiiiiooooouuuunc------";
+      for (var i=0, l=from.length ; i<l ; i++) {
+        str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+      }
+
+      str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+        .replace(/\s+/g, '-') // collapse whitespace and replace by -
+        .replace(/-+/g, '-'); // collapse dashes
+
+      return str;
+    };
+
     return (
       <li className={liClass}>
-        <a href='javascript:void(0)' onClick={this.props.onClick}>
+        <Link to={'/linha'} onClick={this.props.onClick}>
           <span className='number'><span>{this.props.content.lineNumber}</span></span>
           {this.props.content.lineName}
-        </a>
+        </Link>
       </li>
     )
   }
@@ -102,7 +121,7 @@ export default class LineList extends Component {
         } else if(index == strangeNames.length - 1) {
           ent = ""
         } else {
-          ent = ","
+          ent = ", "
         }
         return <span><a key={index} className='strange-name' href='javascript:void(0)' onClick={this.setSearch.bind(this, name)}>{name}</a>{ent}</span>
       })
