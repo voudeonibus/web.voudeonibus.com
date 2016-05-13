@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 export default class BoxSearch extends Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       searchQ: this.props.searchQ
@@ -17,30 +17,29 @@ export default class BoxSearch extends Component {
     }
   }
 
-  handleSearch(input) {
+  handleSearch (input) {
     let inputVal = input.target.value
     this.setState({
       searchQ: inputVal
     })
   }
 
-  cleanSearch(input) {
+  cleanSearch (input) {
     this.setState({
-      searchQ: ""
+      searchQ: ''
     })
   }
 
   render () {
-
-    let showCleanButton = false;
-    if(this.props.searchQ.length > 0) {
+    let showCleanButton = false
+    if (this.props.searchQ.length > 0) {
       showCleanButton = true
     }
 
-    let cleanSearchClass = classNames ({
+    let cleanSearchClass = classNames({
       'clean-search': true,
       'show': showCleanButton
-    });
+    })
 
     return (
       <form className='vdb-search-box'>
