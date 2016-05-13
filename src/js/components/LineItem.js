@@ -6,7 +6,6 @@ import LineSelectDays from '../components/LineSelectDays'
 import LineTable from '../components/LineTable'
 import Headroom from 'react-headroom'
 
-
 export default class LineItem extends Component {
 
   constructor (props) {
@@ -19,7 +18,7 @@ export default class LineItem extends Component {
         <LineItemHeader {...this.props} />
         <Headroom
           disable={this.props.lineItemTop ? false : true}
-          parent={() =>  document.getElementById('headRoom') }
+          parent={() => document.getElementById('headRoom') }
         >
           <LineSelectDays />
         </Headroom>
