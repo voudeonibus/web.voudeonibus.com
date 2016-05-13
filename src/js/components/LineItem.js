@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { Router, Route, Link, browserHistory } from 'react-router'
 
 import LineItemHeader from '../components/LineItemHeader'
@@ -15,9 +15,9 @@ export default class LineItem extends Component {
   render () {
     return (
       <div id='headRoom' className='vdb-wrap-scroll'>
-        <LineItemHeader {...this.props} />
+        <LineItemHeader {...this.context} />
         <Headroom
-          disable={this.props.lineItemTop ? false : true}
+          disable={this.context.lineItemTop ? false : true}
           parent={() => document.getElementById('headRoom') }
         >
           <LineSelectDays />
@@ -41,4 +41,9 @@ export default class LineItem extends Component {
       </div>
     )
   }
+}
+
+LineItem.contextTypes = {
+  lineItemScroll: PropTypes.number,
+  lineItemTop: PropTypes.bool
 }
