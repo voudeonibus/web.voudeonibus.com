@@ -3,26 +3,6 @@ import _ from 'lodash'
 import classNames from 'classnames'
 import { Router, Route, Link, browserHistory } from 'react-router'
 
-let listLines = [
-  { lineName: 'Três Rios', lineNumber: '100' },
-  { lineName: 'Três Rios', lineNumber: '100' },
-  { lineName: 'Três Rios', lineNumber: '100' },
-  { lineName: 'Sábado', lineNumber: '100' },
-  { lineName: 'Sábado', lineNumber: '100' },
-  { lineName: 'Sábado', lineNumber: '100' },
-  { lineName: 'Dômingís e feriados', lineNumber: '999' },
-  { lineName: 'Domingos e feriados', lineNumber: '100' },
-  { lineName: 'Domingos e feriados', lineNumber: '100' },
-  { lineName: 'Domingos e feriados', lineNumber: '100' },
-  { lineName: 'Domingos e feriados', lineNumber: '100' },
-  { lineName: 'Domingos e feriados', lineNumber: '100' },
-  { lineName: 'Domingos e feriados', lineNumber: '100' },
-  { lineName: 'Domingos e feriados', lineNumber: '100' },
-  { lineName: 'Schroeder', lineNumber: '100' },
-  { lineName: 'Kohlbach', lineNumber: '100' },
-  { lineName: 'Czerniewicz', lineNumber: '100' }
-]
-
 let strangeNames = ['Schroeder', 'Kohlbach', 'Czerniewicz', 'Corticeira', 'Sei lá', 'Woznica']
 
 class MenuItemLines extends Component {
@@ -96,11 +76,11 @@ export default class LineList extends Component {
     let filterData, contentLines
     let searchString = this.props.searchQ
     if (isNaN(searchString)) {
-      filterData = listLines.filter(function (l) {
+      filterData = window.api[0].lines.filter(function (l) {
         return _.deburr(l.lineName.toLowerCase()).match(_.deburr(searchString.toLowerCase()))
       })
     } else {
-      filterData = listLines.filter(function (l) {
+      filterData = window.api[0].lines.filter(function (l) {
         return l.lineNumber.match(searchString)
       })
     }
