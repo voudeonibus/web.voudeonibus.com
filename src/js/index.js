@@ -14,7 +14,7 @@ render((
   <Router history={browserHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={LineClean} />
-      <Route path='linha' component={LineItem} />
+      <Route path='/:id' component={LineItem} />
     </Route>
   </Router>),
   document.getElementById('the__root')
