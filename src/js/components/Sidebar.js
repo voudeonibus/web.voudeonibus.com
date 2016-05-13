@@ -49,7 +49,7 @@ export default class LineList extends Component {
 
     this.state = {
       searchQ: this.props.searchQ,
-      selectedIndex: 0
+      selectedIndex: false
     }
   }
 
@@ -90,7 +90,13 @@ export default class LineList extends Component {
         return <MenuItemLines content={item}
               key={index}
               onClick={this.handleLines.bind(this, index)}
-              active={this.state.selectedIndex === index} />
+              active={(() => {
+                if (_.isBoolean(this.state.selectedIndex)) {
+                  return false
+                } else {
+                  return this.state.selectedIndex === index
+                }
+              })()} />
       })
     } else {
       let strangeNamesList = strangeNames.map((name, index) => {
