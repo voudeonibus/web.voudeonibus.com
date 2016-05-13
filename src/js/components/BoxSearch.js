@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 
 export default class BoxSearch extends Component {
 
@@ -23,10 +24,28 @@ export default class BoxSearch extends Component {
     })
   }
 
+  cleanSearch(input) {
+    this.setState({
+      searchQ: ""
+    })
+  }
+
   render () {
+
+    let showCleanButton = false;
+    if(this.props.searchQ.length > 0) {
+      showCleanButton = true
+    }
+
+    let cleanSearchClass = classNames ({
+      'clean-search': true,
+      'show': showCleanButton
+    });
+
     return (
       <form className='vdb-search-box'>
         <input value={this.props.searchQ} onChange={this.handleSearch.bind(this)} type='text' placeholder='Busque pela sua linha' />
+        <a href='javascript:void(0)' onClick={this.cleanSearch.bind(this)} className={cleanSearchClass}>×</a>
       </form>
     )
   }

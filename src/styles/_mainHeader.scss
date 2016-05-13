@@ -57,6 +57,22 @@
   }
 }
 
+.clean-search {
+  position: absolute;
+  color: $gray;
+  text-decoration: none;
+  top: 0;
+  right: 0;
+  display: block;
+  line-height: 2.7em;
+  width: 2.7em;
+  text-align: center;
+  display: none;
+  &.show {
+    display: block
+  }
+}
+
 
 // mobile
 @media screen and (max-width: $s-point) {

@@ -31,11 +31,9 @@ export default class App extends Component {
       let header = 75;
       let scrollRatio = (thisScroll*header)/100;
 
-      if(scrollRatio <= 120) {
-        this.setState({
-          lineItemScroll: scrollRatio
-        })
-      }
+      this.setState({
+        lineItemScroll: scrollRatio
+      })
 
       if(scrollRatio > 100) {
         this.setState({
@@ -68,7 +66,6 @@ export default class App extends Component {
         <div className='vdb-side'>
           <Header />
           <button onClick={this.handleMenu.bind(this)} className='vdb-menu-open vdb-menu-action'><span>Open menu</span></button>
-
           <div className={this.state.menuOpen ? 'vdb-menu vdb-menu-active' : 'vdb-menu'}>
             <div className='vdb-menu-wrap'>
               <BoxSearch searchQ={this.state.searchQ} onChange={this.onChangeBoxSearch.bind(this)} />
