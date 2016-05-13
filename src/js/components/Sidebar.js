@@ -17,8 +17,12 @@ let listLines = [
   ,{ lineName: "Domingos e feriados", lineNumber: "100"  }
   ,{ lineName: "Domingos e feriados", lineNumber: "100"  }
   ,{ lineName: "Domingos e feriados", lineNumber: "100"  }
+  ,{ lineName: "Schroeder", lineNumber: "100"  }
+  ,{ lineName: "Kohlbach", lineNumber: "100"  }
+  ,{ lineName: "Czerniewicz", lineNumber: "100"  }
 ];
 
+let strangeNames = ["Schroeder","Kohlbach","Czerniewicz","Corticeira","Sei lá"]
 
 class MenuItemLines extends Component {
   render(){
@@ -46,8 +50,22 @@ export default class LineList extends Component {
     super(props)
 
     this.state = {
+      searchQ: this.props.searchQ,
       selectedIndex: 0
     }
+  }
+
+  componentWillUpdate (nextProps, nextState) {
+    if (nextState.searchQ !== this.state.searchQ) {
+      const { onClick } = this.props
+      onClick && onClick(nextState.searchQ)
+    }
+  }
+
+  setSearch(query) {
+    this.setState({
+      searchQ: query
+    })
   }
 
   handleLines(index) {
@@ -77,7 +95,22 @@ export default class LineList extends Component {
               active={this.state.selectedIndex === index} />
       })
     } else {
-      contentLines = <li className='not-found'>Nenhum resultado encontrado <span><span>:</span>(</span></li>
+      let strangeNamesList = strangeNames.map((name, index) => {
+        let ent;
+        if(index == strangeNames.length - 2) {
+          ent = " ou "
+        } else if(index == strangeNames.length - 1) {
+          ent = ""
+        } else {
+          ent = ","
+        }
+        return <span><a key={index} className='strange-name' href='javascript:void(0)' onClick={this.setSearch.bind(this, name)}>{name}</a>{ent}</span>
+      })
+      contentLines =
+        <div className='not-found'>
+          <p className='not-found-p'>Nenhum resultado encontrado <span><span>:</span>(</span></p>
+          <p className='not-found-vqd'>Você quis dizer: {strangeNamesList}?</p>
+        </div>
     }
 
     return (

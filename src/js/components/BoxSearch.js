@@ -26,7 +26,7 @@ export default class BoxSearch extends Component {
   render () {
     return (
       <form className='vdb-search-box'>
-        <input value={this.state.searchQ} onChange={this.handleSearch.bind(this)} type='text' placeholder='Busque pela sua linha' />
+        <input value={this.props.searchQ} onChange={this.handleSearch.bind(this)} type='text' placeholder='Busque pela sua linha' />
       </form>
     )
   }
