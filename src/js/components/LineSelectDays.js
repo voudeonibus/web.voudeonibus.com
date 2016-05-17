@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 let menuItems = [
-  { menuItem: 'Dias úteis' },
-  { menuItem: 'Sábado' },
-  { menuItem: 'Domingos e feriados' }
+  { menuItem: 'Dias úteis', type: 1 },
+  { menuItem: 'Sábado' , type: 2 },
+  { menuItem: 'Domingos e feriados', type: 3 }
 ]
 
 class MenuItemDays extends Component {
