@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 import { Router, Route, Link, browserHistory } from 'react-router'
+import _ from 'lodash'
 
 import Header from './components/header'
 import BoxSearch from './components/BoxSearch'
@@ -32,7 +33,7 @@ export default class App extends Component {
   }
 
   handleScroll (targetScroll) {
-    console.log
+    console.log("cu2")
     let thisScroll = targetScroll.target.scrollTop
     let header = 75
     let scrollRatio = (thisScroll * header) / 100
@@ -56,7 +57,6 @@ export default class App extends Component {
     this.setState({
       searchQ: value
     })
-    console.log(this.state.searchQ)
   }
 
   render () {
@@ -81,7 +81,7 @@ export default class App extends Component {
         </div>
 
         <div className='vdb-wrap'>
-          <div className='vdb-wrap-container' onScroll={this.handleScroll.bind(this)}>
+          <div className='vdb-wrap-container' onScroll={_.throttle(this.handleScroll.bind(this))}>
             {this.props.children}
           </div>
         </div>

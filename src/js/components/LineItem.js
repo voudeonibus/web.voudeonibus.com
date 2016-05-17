@@ -55,10 +55,6 @@ export default class LineItem extends Component {
 
     let { line } = this.state
 
-
-
-    console.log(line)
-
     return (
       <div id='headRoom' className='vdb-wrap-scroll'>
         <LineItemHeader {...this.context} line={line} />
@@ -72,7 +68,6 @@ export default class LineItem extends Component {
           <div className='vdb-way'>
             <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
             {this.getDay('ida').map(trip => {
-              console.log(trip)
               return <LineTable {...trip} />
             })}
           </div>
