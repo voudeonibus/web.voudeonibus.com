@@ -27,6 +27,8 @@ export default class LineItem extends Component {
 
     let line = this.getLineCurrent()
 
+    console.log(line)
+
     return (
       <div id='headRoom' className='vdb-wrap-scroll'>
         <LineItemHeader {...this.context} line={line} />
