@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 let menuItems = [
-  { menuItem: 'Dias úteis' },
-  { menuItem: 'Sábado' },
-  { menuItem: 'Domingos e feriados' }
+  { menuItem: 'Dias úteis', type: 1 },
+  { menuItem: 'Sábado' , type: 2 },
+  { menuItem: 'Domingos e feriados', type: 3 }
 ]
 
 class MenuItemDays extends Component {
@@ -24,6 +24,13 @@ export default class LineSelectDays extends Component {
     }
   }
 
+  componentWillUpdate (nextProps, nextState) {
+    if (nextState.selectedIndex !== this.state.selectedIndex) {
+      let { onSelect } = this.props
+      onSelect && onSelect(menuItems[nextState.selectedIndex])
+    }
+  }
+
   handleDays (index) {
     this.setState({
       selectedIndex: index
@@ -34,7 +41,8 @@ export default class LineSelectDays extends Component {
     return (
       <div className='vdb-line-select-days'>
         {menuItems.map((item, index) => {
-          return <MenuItemDays label={item.menuItem}
+          return <MenuItemDays
+                label={item.menuItem}
                 key={index}
                 onClick={this.handleDays.bind(this, index)}
                 active={this.state.selectedIndex === index} />
