@@ -33,7 +33,7 @@ class MenuItemLines extends Component {
 
     return (
       <li className={liClass}>
-        <Link to={`/${this.props.content.lineNumber}`} onClick={this.props.onClick}>
+        <Link to={`/l/${this.props.content.lineNumber}`} onClick={this.props.onClick}>
           <span className='number'><span>{this.props.content.lineNumber}</span></span>
           {this.props.content.lineName}
         </Link>
