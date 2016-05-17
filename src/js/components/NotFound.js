@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import NotFoundImg from '../../pics/page-404.jpg'
 
-class NotFound extends Component {
+
+export default class NotFound extends Component {
   render () {
     return (
-      <div>
-        <h1>404</h1>
+      <div className='vdb-page_notfound'>
+        <img src={NotFoundImg} />
+        <h1>Ops, aconteceu algo de errado!</h1>
+        <p><strong>Página não encontrada,</strong> navegue pelas linhas no menu lateral e não perca o horário.</p>
       </div>
     )
   }
