@@ -1,5 +1,11 @@
 * {
   box-sizing: border-box;
+  &::-webkit-scrollbar {
+      width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+  }
 }
 html {
   font: 16px/1.4 "Lato", sans-serif;

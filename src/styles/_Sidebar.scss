@@ -9,7 +9,7 @@
   font-size: $size;
   padding: 0 $size/2;
   float: left;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   line-height: $size*1.5;
   vertical-align: bottom;
   position: relative;
@@ -101,13 +101,6 @@
     &:hover {
       text-decoration: underline;
     }
-  }
-
-  &::-webkit-scrollbar {
-      width: 5px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $gray-low;
   }
 }
 
