@@ -33,7 +33,6 @@ export default class App extends Component {
   }
 
   handleScroll (targetScroll) {
-    console.log("cu2")
     let thisScroll = targetScroll.target.scrollTop
     let header = 75
     let scrollRatio = (thisScroll * header) / 100
