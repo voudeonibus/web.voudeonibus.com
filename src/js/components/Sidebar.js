@@ -3,7 +3,7 @@ import _ from 'lodash'
 import classNames from 'classnames'
 import { Router, Route, Link, browserHistory } from 'react-router'
 
-let strangeNames = ['Schroeder', 'Kohlbach', 'Czerniewicz', 'Corticeira', 'Sei lá', 'Woznica']
+let strangeNames = ['Schroeder', 'Schubert']
 
 class MenuItemLines extends Component {
   render (){

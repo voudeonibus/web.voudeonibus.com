@@ -58,9 +58,9 @@
 .vdb-line-list {
   padding: 0;
   overflow: auto;
-  height: calc(100%);
+  height: calc(100% - 4.5rem);
   margin-top: 2rem;
-  padding-bottom: 2.5rem;
+  // padding-bottom: 2.5rem;
   .not-found {
     color: $gray;
     font-size: 1em;
@@ -90,6 +90,7 @@
     &-vqd {
       // font-weight: bold;
       font-size: .9em;
+      display: none;
     }
   }
   .strange-name {

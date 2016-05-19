@@ -1,6 +1,14 @@
 .vdb-home {
   text-align: center;
   padding: 3em;
+  p {
+    color: $gray;
+    font-weight: 300;
+    line-height: 1.8;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+  }
 }
 
 .vdb-home_wrap {
@@ -17,10 +25,7 @@
 }
 
 .vdb-home_p {
-  color: $gray;
-  font-weight: 300;
-  line-height: 1.8;
-  margin: 0;
+  margin: 1em 0 0;
   img, p {
     display: inline-block;
   }
@@ -33,17 +38,22 @@
 }
 
 .vdb-home_social {
+  margin-top: 1em;
+  p {
+    top: -4px;
+    margin-right: .5em;
+    font-weight: bold;
+  }
   iframe {
      border: 0;
      width: 80px;
   }
+  .star {
+    width: 53px;
+  }
 }
 
 .vdb-home_support {
-  color: $gray;
-  font-weight: 300;
-  line-height: 1.8;
-  margin: 0;
   font-size: .7em;
   text-transform: uppercase;
   position: absolute;

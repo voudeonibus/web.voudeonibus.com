@@ -22,8 +22,9 @@ export default class Home extends Component {
             <p>Não depende de internet.</p>
           </div>
           <div className='vdb-home_social'>
+            <p>Contribua:</p>
             <iframe src="https://ghbtns.com/github-btn.html?user=voudeonibus&repo=web.voudeonibus.com&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-            <iframe src="https://ghbtns.com/github-btn.html?user=voudeonibus&repo=web.voudeonibus.com&type=fork&count=false" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+            <iframe className='star' src="https://ghbtns.com/github-btn.html?user=voudeonibus&repo=web.voudeonibus.com&type=fork&count=false" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
           </div>
         </div>
         <div className='vdb-home_support'>
