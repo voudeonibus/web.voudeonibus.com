@@ -59,8 +59,8 @@
   padding: 0;
   overflow: auto;
   height: calc(100%);
-  margin-top: 1rem;
-  padding-bottom: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 2.5rem;
   .not-found {
     color: $gray;
     font-size: 1em;
@@ -100,6 +100,13 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  &::-webkit-scrollbar {
+      width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $gray-low;
   }
 }
 

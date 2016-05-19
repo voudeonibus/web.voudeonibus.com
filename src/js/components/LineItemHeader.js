@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import HeaderPlaceholder from '../../pics/header-placeholder.jpg'
+import HeaderPlaceholder from '../../img/header-placeholder.jpg'
 
 export default class LineItemHeader extends Component {
   constructor (props) {

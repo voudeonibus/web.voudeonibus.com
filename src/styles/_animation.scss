@@ -1,3 +1,14 @@
+@keyframes scaleUp {
+  0% {
+    opacity: .8;
+    transform: scale(.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes slideUp {
   0% {
     opacity: 0;

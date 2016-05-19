@@ -1,0 +1,61 @@
+.vdb-home {
+  text-align: center;
+  padding: 3em;
+}
+
+.vdb-home_wrap {
+  animation: scaleUp 1s ease;
+}
+
+.vdb-home_title {
+  color: $brand;
+  font-size: 1.7em;
+  font-weight: 300;
+  margin: .6em 0 .2em;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.vdb-home_p {
+  color: $gray;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0;
+  img, p {
+    display: inline-block;
+  }
+  img {
+    position: relative;
+    top: 3px;
+    left: -5px;
+    width: 18px;
+  }
+}
+
+.vdb-home_social {
+  iframe {
+     border: 0;
+     width: 80px;
+  }
+}
+
+.vdb-home_support {
+  color: $gray;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0;
+  font-size: .7em;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 3em;
+  left: 0;
+  right: 0;
+  animation: slideDown 1s ease;
+  img {
+    width: 120px;
+    margin-left: 1em;
+  }
+  img, p {
+    display: inline-block;
+  }
+}
