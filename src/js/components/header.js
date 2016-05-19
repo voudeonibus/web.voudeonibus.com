@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Router, Route, Link, browserHistory } from 'react-router'
 
 import VoudeOnibusPng from '../../img/voudeonibus.png'
 import VoudeOnibusHorizontalPng from '../../img/voudeonibus-horizontal.png'
@@ -10,7 +11,9 @@ export default class Header extends Component {
     return (
       <header className='vdb-header'>
         <h1 className='vdb-title'>
-          <img alt='Vou de ônibus' srcSet={imgs} />
+          <Link to={`/`}>
+            <img alt='Vou de ônibus' srcSet={imgs} />
+          </Link>
         </h1>
       </header>
     )
