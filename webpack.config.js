@@ -1,10 +1,10 @@
 'use strict'
 
-var path = require('path')
-var webpack = require('webpack')
-var autoprefixer = require('autoprefixer')
-var lost = require('lost')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
+const lost = require('lost')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'eval-source-map',
