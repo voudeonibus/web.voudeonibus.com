@@ -30,6 +30,7 @@
     "html-webpack-plugin": "^2.9.0",
     "lost": "^6.7.2",
     "node-sass": "^3.4.2",
+    "postcss-font-magician": "^1.4.0",
     "postcss-loader": "^0.8.1",
     "react-headroom": "^2.0.0",
     "react-picture": "0.0.4",
