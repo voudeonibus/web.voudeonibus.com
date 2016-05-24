@@ -67,6 +67,9 @@ export default class LineList extends Component {
       })
     }
 
+    // sorter
+    filterData = _.sortBy(filterData, function(o) { return o.lineName; })
+
     if (filterData.length) {
       contentLines = filterData.map((item, index) => {
         return <MenuItemLines content={item}
