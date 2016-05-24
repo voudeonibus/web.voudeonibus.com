@@ -30,7 +30,8 @@
     "html-webpack-plugin": "^2.9.0",
     "lost": "^6.7.2",
     "node-sass": "^3.4.2",
-    "postcss-loader": "^0.8.1",
+    "postcss-font-magician": "^1.4.0",
+    "postcss-loader": "^0.9.1",
     "react-headroom": "^2.0.0",
     "react-picture": "0.0.4",
     "sass-loader": "^3.1.2",
@@ -43,7 +44,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "lodash": "^4.11.1",
-    "normalize-scss": "^4.0.3",
+    "normalize-scss": "^5.0.2",
     "normalize.css": "^4.1.1",
     "qs": "^6.1.0",
     "react": "^15.0.1",

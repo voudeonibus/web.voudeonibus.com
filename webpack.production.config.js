@@ -1,12 +1,13 @@
 'use strict'
 
-var path = require('path')
-var webpack = require('webpack')
-var autoprefixer = require('autoprefixer')
-var lost = require('lost')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var StatsPlugin = require('stats-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
+const lost = require('lost')
+const fontMagician = require('postcss-font-magician')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const StatsPlugin = require('stats-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -62,6 +63,6 @@ module.exports = {
   },
 
   postcss: function () {
-    return [autoprefixer, lost]
+    return [autoprefixer, lost, fontMagician]
   }
 }
