@@ -68,7 +68,7 @@ export default class LineList extends Component {
     }
 
     // sorter
-    filterData = _.sortBy(filterData, function(o) { return o.lineName; })
+    filterData = _.sortBy(filterData, function(o) { return _.deburr(o.lineName) })
 
     if (filterData.length) {
       contentLines = filterData.map((item, index) => {
