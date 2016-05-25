@@ -30,10 +30,10 @@ export default class LineTable extends Component {
 
         <table className='vdb-table-line'>
           <tbody>
-            {this.getHoursStruct().map(lineHours => {
+            {this.getHoursStruct().map((lineHours, key) => {
               return (
-                <tr>
-                  {lineHours.map(hour => (<td>{hour}</td>))}
+                <tr key={key}>
+                  {lineHours.map((hour, key) => (<td key={key}>{hour}</td>))}
                 </tr>
               )
             })}
