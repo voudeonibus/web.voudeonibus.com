@@ -80,7 +80,7 @@ export default class App extends Component {
         </div>
 
         <div className='vdb-wrap'>
-          <div className='vdb-wrap-container' onScroll={_.throttle(this.handleScroll.bind(this))}>
+          <div className='vdb-wrap-container' onScroll={_.throttle(this.handleScroll.bind(this), 1000)}>
             {this.props.children}
           </div>
         </div>
