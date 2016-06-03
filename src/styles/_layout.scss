@@ -6,6 +6,11 @@
   &::-webkit-scrollbar-thumb {
     background: #ccc;
   }
+  @media screen and (max-width: $s-point) {
+    &::-webkit-scrollbar-thumb {
+        background: none;
+    }
+  }
 }
 html {
   font: 16px/1.4 "Lato", sans-serif;
@@ -106,7 +111,7 @@ body {
     padding: .5rem;
   }
   .vdb-wrap-container {
-    min-height: 100px;
+    height: auto;
     padding: 0;
   }
 }

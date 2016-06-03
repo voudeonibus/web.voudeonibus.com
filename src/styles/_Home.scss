@@ -9,7 +9,17 @@
     display: inline-block;
     position: relative;
   }
+  @media screen and (max-width: $s-point) {
+    padding: 1em;
+  }
 }
+
+@media screen and (max-width: $s-point) {
+  .vdb-home_phone {
+    display: none;
+  }
+}
+
 
 .vdb-home_wrap {
   animation: scaleUp 1s ease;
@@ -22,6 +32,17 @@
   margin: .6em 0 .2em;
   max-width: 350px;
   margin: 0 auto;
+  background: url(../img/vdb-home_phone.jpg) center top no-repeat;
+  padding-top: 17rem;
+  @media screen and (max-width: $s-point) {
+    font-size: 1.2em;
+    text-align: left;
+    max-width: 17rem;
+    padding-top: 0;
+    padding-left: 4rem;
+    background: url(../img/voudeonibus.png) -20px 0 no-repeat;
+    background-size: 90px;
+  }
 }
 
 .vdb-home_p {
@@ -61,6 +82,10 @@
   left: 0;
   right: 0;
   animation: slideDown 1s ease;
+  @media screen and (max-width: $s-point) {
+    position: static;
+    margin-top: 5em;
+  }
   img {
     width: 120px;
     margin-left: 1em;

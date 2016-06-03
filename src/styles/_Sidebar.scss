@@ -227,6 +227,13 @@
     right: -100%;
     transition: opacity .4s ease-out;
   }
+  .vdb-line-list {
+    .not-found {
+      &-p {
+        padding: 0 1.5rem .48rem;
+      }
+    }
+  }
 }
 
 

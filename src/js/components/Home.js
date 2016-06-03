@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import phone from '../../img/vdb-home_phone.jpg'
 import noWifi from '../../img/icon-nowifi.gif'
 import support from '../../img/LogoCanarinho.jpg'
 
@@ -15,7 +14,6 @@ export default class Home extends Component {
     return (
       <div className='vdb-home'>
         <div className='vdb-home_wrap'>
-          <img className='vdb-home_phone' src={phone} />
           <h1 className='vdb-home_title'>Horários de ônibus de Jaraguá do Sul e região.</h1>
           <div className='vdb-home_p'>
             <img src={noWifi} />
