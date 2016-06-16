@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 import classNames from 'classnames'
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Link } from 'react-router'
 
 let strangeNames = ['Schroeder', 'Schubert']
 
 class MenuItemLines extends Component {
-  render (){
+  render () {
     let liClass = classNames({
       'vdb-line-list_item': true,
       'vdb-favorite': false,
@@ -68,7 +68,7 @@ export default class LineList extends Component {
     }
 
     // sorter
-    filterData = _.sortBy(filterData, function(o) { return _.deburr(o.lineName) })
+    filterData = _.sortBy(filterData, (o) => { return _.deburr(o.lineName) })
 
     if (filterData.length) {
       contentLines = filterData.map((item, index) => {
