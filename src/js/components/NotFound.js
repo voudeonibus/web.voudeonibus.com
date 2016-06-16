@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import NotFoundImg from '../../img/page-404.jpg'
 
-
 export default class NotFound extends Component {
   render () {
     return (
