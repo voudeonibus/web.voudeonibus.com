@@ -8,7 +8,6 @@ export default class LineItemHeader extends Component {
   }
 
   render () {
-
     let scrollOpacity = this.props.lineItemScroll / 100
     let scrollFade = ((this.props.lineItemScroll / 100)-1)*-1
 
