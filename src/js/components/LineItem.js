@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { Router, Route, Link, browserHistory } from 'react-router'
 import _ from 'lodash'
 
 import LineItemHeader from '../components/LineItemHeader'
@@ -52,7 +51,6 @@ export default class LineItem extends Component {
   }
 
   render () {
-
     let { line } = this.state
 
     return (
