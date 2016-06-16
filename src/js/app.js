@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
-import { Router, Route, Link, browserHistory } from 'react-router'
 import _ from 'lodash'
 
 import Header from './components/header'
