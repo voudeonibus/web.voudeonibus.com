@@ -4,7 +4,9 @@
   "description": "Vou de ônibus - Web",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "rimraf dist && NODE_ENV='development' webpack --config ./webpack.config.js --progress --profile --colors",
+    "prod": "rimraf dist && NODE_ENV='production' webpack --config ./webpack.production.config.js --progress --profile --colors"
   },
   "repository": {
     "type": "git",
