@@ -55,9 +55,11 @@ if (isDeveloping) {
   })
 }
 
-app.listen(port, '0.0.0.0', function onStart (err) {
+app.listen(port, (err) => {
   if (err) {
     console.log(err)
   }
-  console.log('==> 🌎 Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port)
+  if (isDeveloping) {
+    console.log('==> 🌎 Listening on port %s. Open up http://localhost:%s/ in your browser.', port, port)
+  }
 })
