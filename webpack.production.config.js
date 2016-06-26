@@ -4,6 +4,8 @@ const path = require('path')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const lost = require('lost')
+const cssnano = require('cssnano')
+const mqpacker = require('css-mqpacker')
 const fontMagician = require('postcss-font-magician')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -63,6 +65,6 @@ module.exports = {
   },
 
   postcss: function () {
-    return [autoprefixer, lost, fontMagician]
+    return [autoprefixer, lost, fontMagician, mqpacker, cssnano({ autoprefixer: false })]
   }
 }
