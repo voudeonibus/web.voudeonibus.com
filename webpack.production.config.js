@@ -51,7 +51,7 @@ module.exports = {
       loader: 'babel'
     }, {
       test: /\.(scss|sass|css)$/,
-      loader: 'style-loader!css-loader!postcss-loader!sass-loader'
+      loaders: ExtractTextPlugin.extract('style-loader, css-loader, postcss-loader, sass-loader')
     }, {
       test: /\.(png|jpe?g|svg|gif)$/,
       loaders: [
