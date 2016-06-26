@@ -2,7 +2,7 @@
   "name": "web.voudeonibus.com",
   "version": "1.0.0",
   "description": "Vou de ônibus - Web",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "rimraf dist && NODE_ENV='development' webpack --config ./webpack.config.js --progress --profile --colors",
