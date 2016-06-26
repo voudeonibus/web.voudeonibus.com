@@ -18,7 +18,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, '/dist/'),
-    filename: '[name]-[hash].min.js'
+    filename: '[name]-[hash:base64:4].js'
   },
 
   plugins: [
@@ -28,7 +28,7 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
-    new ExtractTextPlugin('[name]-[hash].min.css'),
+    new ExtractTextPlugin('[name]-[hash:base64:4].css'),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
