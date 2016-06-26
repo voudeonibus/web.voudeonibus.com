@@ -19,5 +19,5 @@ render((
       <Route path='*' component={NotFound} />
     </Route>
   </Router>),
-  document.getElementById('the__root')
+  document.getElementById('App-root')
 )
