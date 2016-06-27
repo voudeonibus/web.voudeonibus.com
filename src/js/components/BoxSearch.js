@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
+import ReactGA from 'react-ga'
+
 
 export default class BoxSearch extends Component {
 
@@ -22,7 +24,11 @@ export default class BoxSearch extends Component {
     this.setState({
       searchQ: inputVal
     })
-    e.preventDefault()
+    ReactGA.event({
+      category: 'handleSearch',
+      action: 'keyDown',
+      label: inputVal
+    })
   }
 
   cleanSearch (input) {

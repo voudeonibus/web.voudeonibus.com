@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactGA from 'react-ga'
 
 let menuItems = [
   { menuItem: 'Dias úteis', type: 1 },
