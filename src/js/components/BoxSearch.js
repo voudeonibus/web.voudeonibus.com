@@ -17,17 +17,22 @@ export default class BoxSearch extends Component {
     }
   }
 
-  handleSearch (input) {
+  handleSearch (input, e) {
     let inputVal = input.target.value
     this.setState({
       searchQ: inputVal
     })
+    e.preventDefault()
   }
 
   cleanSearch (input) {
     this.setState({
       searchQ: ''
     })
+  }
+
+  submit (e) {
+    e.preventDefault()
   }
 
   render () {
@@ -42,7 +47,7 @@ export default class BoxSearch extends Component {
     })
 
     return (
-      <form className='vdb-search-box'>
+      <form className='vdb-search-box' onSubmit={this.submit}>
         <input value={this.props.searchQ} onChange={this.handleSearch.bind(this)} type='text' placeholder='Busque pela sua linha' />
         <a href='javascript:void(0)' onClick={this.cleanSearch.bind(this)} className={cleanSearchClass}>×</a>
       </form>
