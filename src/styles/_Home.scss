@@ -11,6 +11,8 @@
   }
   @media screen and (max-width: $s-point) {
     padding: 1em;
+    background: url(../img/vdb-home_select-line.jpg) 15px 15px no-repeat;
+    background-size: 180px;
   }
 }
 
@@ -33,15 +35,15 @@
   max-width: 350px;
   margin: 0 auto;
   background: url(../img/vdb-home_phone.jpg) center top no-repeat;
-  padding-top: 17rem;
+  background-size: 130px;
+  padding-top: 11rem;
   @media screen and (max-width: $s-point) {
-    font-size: 1.2em;
-    text-align: left;
+    font-size: 1.4em;
     max-width: 17rem;
-    padding-top: 0;
-    padding-left: 4rem;
-    background: url(../img/voudeonibus.png) -20px 0 no-repeat;
-    background-size: 90px;
+    margin-top: 4rem;
+    padding-top: 5rem;
+    background: url(../img/voudeonibus.png) center 0 no-repeat;
+    background-size: 120px;
   }
 }
 
@@ -84,7 +86,7 @@
   animation: slideDown 1s ease;
   @media screen and (max-width: $s-point) {
     position: static;
-    margin-top: 5em;
+    margin-top: 2rem;
   }
   img {
     width: 120px;

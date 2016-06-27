@@ -110,6 +110,7 @@
   border-bottom: 1px solid $gray-low;
   position: relative;
   animation: fade .3s ease;
+  padding-right: 1.8rem;
   // label number
   .number {
     @include flag-number($brand, .6rem);

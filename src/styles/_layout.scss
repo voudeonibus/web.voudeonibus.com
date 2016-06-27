@@ -113,5 +113,7 @@ body {
   .vdb-wrap-container {
     height: auto;
     padding: 0;
+    overflow: visible;
+    position: static;
   }
 }
