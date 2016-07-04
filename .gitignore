@@ -37,3 +37,5 @@ node_modules
 data.js
 
 dist/
+
+.env
