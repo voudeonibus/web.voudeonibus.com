@@ -75,6 +75,11 @@ body {
   height: 100%;
   width: 100%;
   overflow: auto;
+
+  &:before {
+    content: '';
+    will-change: transform;
+  }
 }
 
 .vdb-wrap-table {
