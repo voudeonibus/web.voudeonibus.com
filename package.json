@@ -49,7 +49,6 @@
     "react-headroom": "^2.1.1",
     "react-picture": "0.0.4",
     "react-router": "^2.5.2",
-    "react-virtualized": "^7.12.1",
     "rimraf": "^2.5.3",
     "sass-loader": "^4.0.0",
     "serve-favicons": "^2.1.5",
