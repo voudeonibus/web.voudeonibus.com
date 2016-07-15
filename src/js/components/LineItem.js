@@ -15,6 +15,8 @@ export default class LineItem extends Component {
       line: this.getLineCurrent(props),
       day: 1
     }
+
+    this.onSelectDay = this.onSelectDay.bind(this)
   }
 
   componentWillReceiveProps (nextProps) {
@@ -60,7 +62,7 @@ export default class LineItem extends Component {
           disable={this.context.lineItemTop ? false : true}
           parent={() => document.getElementById('headRoom') }
         >
-          <LineSelectDays onSelect={this.onSelectDay.bind(this)} />
+          <LineSelectDays onSelect={this.onSelectDay} />
         </Headroom>
         <div className='vdb-wrap-table'>
           <div className='vdb-way'>
