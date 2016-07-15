@@ -16,6 +16,10 @@ export default class App extends Component {
       lineItemScroll: 0,
       lineItemTop: false
     }
+
+    this.handleMenu = this.handleMenu.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
+    this.onChangeBoxSearch = this.onChangeBoxSearch.bind(this)
   }
 
   getChildContext () {
@@ -68,18 +72,18 @@ export default class App extends Component {
 
         <div className='vdb-side'>
           <Header />
-          <button onClick={this.handleMenu.bind(this)} className='vdb-menu-open vdb-menu-action'><span>Open menu</span></button>
+          <button onClick={this.handleMenu} className='vdb-menu-open vdb-menu-action'><span>Open menu</span></button>
           <div className={this.state.menuOpen ? 'vdb-menu vdb-menu-active' : 'vdb-menu'}>
             <div className='vdb-menu-wrap'>
-              <BoxSearch searchQ={this.state.searchQ} onChange={this.onChangeBoxSearch.bind(this)} />
-              <Sidebar searchQ={this.state.searchQ} onClick={this.onChangeBoxSearch.bind(this)} />
+              <BoxSearch searchQ={this.state.searchQ} onChange={this.onChangeBoxSearch} />
+              <Sidebar searchQ={this.state.searchQ} onClick={this.onChangeBoxSearch} />
             </div>
-            <button onTouchEnd={this.handleMenu.bind(this)} onClick={this.handleMenu.bind(this)} className='vdb-menu-close vdb-menu-action'><span>Close menu</span></button>
+            <button onTouchEnd={this.handleMenu} onClick={this.handleMenu} className='vdb-menu-close vdb-menu-action'><span>Close menu</span></button>
           </div>
         </div>
 
         <div className='vdb-wrap'>
-          <div className='vdb-wrap-container' onScroll={_.throttle(this.handleScroll.bind(this), 1000)}>
+          <div className='vdb-wrap-container' onScroll={_.throttle(this.handleScroll, 1000)}>
             {this.props.children}
           </div>
         </div>
