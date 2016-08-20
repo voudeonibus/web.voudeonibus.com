@@ -53,10 +53,6 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.scss', '.sass']
   },
-  
-  node: {
-    process: false
-  },
 
   postcss: function () {
     return [autoprefixer, lost, fontMagician]
