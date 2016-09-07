@@ -50,7 +50,7 @@
     "react-picture": "0.0.4",
     "react-router": "^2.7.0",
     "rimraf": "^2.5.4",
-    "sass-loader": "^4.0.1",
+    "sass-loader": "^4.0.2",
     "serve-favicons": "^2.1.5",
     "serve-static": "^1.11.1",
     "stats-webpack-plugin": "^0.4.2",
