@@ -43,7 +43,7 @@
     "postcss-font-magician": "^1.4.0",
     "postcss-loader": "^0.13.0",
     "qs": "^6.2.1",
-    "react": "~15.3.1",
+    "react": "~15.3.2",
     "react-dom": "~15.3.1",
     "react-ga": "^2.1.2",
     "react-headroom": "^2.1.2",
