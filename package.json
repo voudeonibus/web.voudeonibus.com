@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/voudeonibus/web.voudeonibus.com#readme",
   "dependencies": {
-    "autoprefixer": "^6.5.0",
+    "autoprefixer": "^6.5.1",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
