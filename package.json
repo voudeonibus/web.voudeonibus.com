@@ -37,7 +37,7 @@
     "html-webpack-plugin": "^2.24.1",
     "lodash": "^4.16.4",
     "lost": "^7.1.0",
-    "node-sass": "^3.10.1",
+    "node-sass": "^3.11.0",
     "normalize-scss": "^6.0.0",
     "normalize.css": "^5.0.0",
     "postcss-font-magician": "^1.5.0",
