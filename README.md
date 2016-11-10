@@ -13,11 +13,17 @@ Please, follow the steps bellow. :)
 To execute this project you'll need:
 
 * Node.js 5+
+* Yarn
 
 You can clone this repo now, and...
 
 ```bash
 npm i
+```
+Or...
+
+```bash
+yarn
 ```
 
 ### FAQ
