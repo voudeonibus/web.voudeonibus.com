@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import _ from 'lodash'
 
 export default class LineTable extends Component {
   constructor (props) {
@@ -6,39 +7,29 @@ export default class LineTable extends Component {
   }
 
   getHoursStruct () {
-    if (!this.props.departure) {
+    if (!this.props.hours) {
       return []
     }
 
-    let hours = [[]]
+    let hours = []
 
-    for (let i = 0, _len = this.props.departure.hours.length; i < _len; i++) {
-      if (i % 5 === 0) {
-        hours.push([])
-      }
-
-      hours[hours.length - 1].push(this.props.departure.hours[i])
-    }
+    this.props.hours.map(item => {
+      item.departure.hours.map(hour => {
+        hours.push(hour)
+      })
+    })
 
     return hours
   }
 
   render () {
     return (
-      <div>
-        <h3 className='vdb-headsign'>{this.props.variations.join(' - ')}</h3>
-
-        <table className='vdb-table-line'>
-          <tbody>
-            {this.getHoursStruct().map((lineHours, key) => {
-              return (
-                <tr key={key}>
-                  {lineHours.map((hour, key) => (<td key={key}>{hour}</td>))}
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
+      <div className='vdb-table-line'>
+        {this.getHoursStruct().sort().map(lineHours => {
+          return (
+            <div>{lineHours}</div>
+          )
+        })}
       </div>
     )
   }

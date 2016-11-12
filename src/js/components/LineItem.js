@@ -67,15 +67,11 @@ export default class LineItem extends Component {
         <div className='vdb-wrap-table'>
           <div className='vdb-way'>
             <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
-            {this.getDay('ida').map((trip, key) => {
-              return <LineTable key={key} {...trip} />
-            })}
+            <LineTable hours={this.getDay('ida')} />
           </div>
           <div className='vdb-way'>
             <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
-            {this.getDay('volta').map((trip, key) => {
-              return <LineTable key={key} {...trip} />
-            })}
+            <LineTable hours={this.getDay('volta')} />
           </div>
         </div>
       </div>
