@@ -4,6 +4,7 @@ import _ from 'lodash'
 import LineItemHeader from '../components/LineItemHeader'
 import LineSelectDays from '../components/LineSelectDays'
 import LineTable from '../components/LineTable'
+import { maskLegend } from '../utils/legends'
 import Headroom from 'react-headroom'
 
 export default class LineItem extends Component {
@@ -55,7 +56,10 @@ export default class LineItem extends Component {
   getLegends (hours) {
     let legends = []
     hours.map((item, i) => {
-      legends.push(`${_.padStart(i + 1, 2, '0')}: ${item.origin} / ${item.destin} - ${item.variations.join(' - ')}`)
+      legends.push({
+        position: `${_.padStart(i + 1, 2, '0')}`,
+        description: maskLegend(item, i)
+      })
     })
     return legends
   }
@@ -78,17 +82,17 @@ export default class LineItem extends Component {
         <div className='vdb-wrap-table'>
           <div className='vdb-way'>
             <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
-            <LineTable hours={ida} />
+            <LineTable hours={ida} legends={legends} />
           </div>
           <div className='vdb-way'>
             <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
-            <LineTable hours={volta} />
+            <LineTable hours={volta} legends={legends} />
           </div>
         </div>
         <div className='vdb-legends'>
           <span>Destino:</span>
           {legends.map(legend => {
-            return <div>{legend}</div>
+            return <div>{legend.position + ': ' + legend.description}</div>
           })}
         </div>
       </div>

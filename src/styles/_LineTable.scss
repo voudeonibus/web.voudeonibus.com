@@ -141,17 +141,17 @@
   color: $gray;
   font-weight: 300;
   text-align: center;
-  padding: 0 50px;
+  padding: 20px 50px 0;
 
   div {
+    position: relative;
     display: inline-block;
     width: 70px;
   }
-  // td {
-  //   border-bottom: 1px solid $gray-low;
-  //   line-height: 1.9;
-  // }
-  // tr:last-child td {
-  //   border-bottom: 0;
-  // }
+
+  sup {
+    position: absolute;
+    top: 6px;
+    right: -1px;
+  }
 }

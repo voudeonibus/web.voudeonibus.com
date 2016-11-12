@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import _ from 'lodash'
+import { maskLegend } from '../utils/legends'
 
 export default class LineTable extends Component {
   constructor (props) {
@@ -14,6 +15,7 @@ export default class LineTable extends Component {
         hours.push({
           destin: item.destin,
           origin: item.origin,
+          indexLegend: this.props.legends.filter(l => l.description === maskLegend(item))[0].position,
           variations: item.variations,
           hour
         })
@@ -30,12 +32,15 @@ export default class LineTable extends Component {
   render () {
 
     let struct = this.getHoursStruct()
-    
+
     return (
       <div className='vdb-table-line'>
         {struct.map(lineHours => {
           return (
-            <div>{lineHours.hour}</div>
+            <div>
+              <div>{lineHours.hour}</div>
+              <sup>{lineHours.indexLegend}</sup>
+            </div>
           )
         })}
       </div>
