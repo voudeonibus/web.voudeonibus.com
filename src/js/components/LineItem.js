@@ -52,8 +52,19 @@ export default class LineItem extends Component {
     })
   }
 
+  getLegends (hours) {
+    let legends = []
+    hours.map((item, i) => {
+      legends.push(`${_.padStart(i + 1, 2, '0')}: ${item.origin} / ${item.destin} - ${item.variations.join(' - ')}`)
+    })
+    return legends
+  }
+
   render () {
     let { line } = this.state
+    const ida = this.getDay('ida')
+    const volta = this.getDay('volta')
+    const legends = this.getLegends(ida.concat(volta))
 
     return (
       <div id='headRoom' className='vdb-wrap-scroll'>
@@ -67,12 +78,18 @@ export default class LineItem extends Component {
         <div className='vdb-wrap-table'>
           <div className='vdb-way'>
             <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
-            <LineTable hours={this.getDay('ida')} />
+            <LineTable hours={ida} />
           </div>
           <div className='vdb-way'>
             <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
-            <LineTable hours={this.getDay('volta')} />
+            <LineTable hours={volta} />
           </div>
+        </div>
+        <div className='vdb-legends'>
+          <span>Destino:</span>
+          {legends.map(legend => {
+            return <div>{legend}</div>
+          })}
         </div>
       </div>
     )
