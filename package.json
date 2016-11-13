@@ -35,7 +35,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
-    "lodash": "^4.16.4",
+    "lodash": "^4.16.5",
     "lost": "^7.1.1",
     "node-sass": "^3.12.0",
     "normalize-scss": "^6.0.0",
