@@ -65,10 +65,37 @@ export default class LineItem extends Component {
   }
 
   render () {
-    let { line } = this.state
+    let { line } = this.state, view
     const ida = this.getDay('ida')
     const volta = this.getDay('volta')
     const legends = this.getLegends(ida.concat(volta))
+
+    if (ida.length > 0 || volta.length > 0) {
+      view = [
+        <div className='vdb-wrap-table'>
+          <div className='vdb-way'>
+            <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
+            <LineTable hours={ida} legends={legends} />
+          </div>
+          <div className='vdb-way'>
+            <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
+            <LineTable hours={volta} legends={legends} />
+          </div>
+        </div>,
+        <div className='vdb-legends'>
+          <span>Destino:</span>
+          {legends.map(legend => {
+            return <div>{legend.position + ': ' + legend.description}</div>
+          })}
+        </div>
+      ]
+    } else {
+      view = (
+        <div className='vdb-day-empty'>
+          <p>Sem ônibus para esse dia :(</p>
+        </div>
+      )
+    }
 
     return (
       <div id='headRoom' className='vdb-wrap-scroll'>
@@ -79,22 +106,7 @@ export default class LineItem extends Component {
         >
           <LineSelectDays onSelect={this.onSelectDay} />
         </Headroom>
-        <div className='vdb-wrap-table'>
-          <div className='vdb-way'>
-            <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
-            <LineTable hours={ida} legends={legends} />
-          </div>
-          <div className='vdb-way'>
-            <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
-            <LineTable hours={volta} legends={legends} />
-          </div>
-        </div>
-        <div className='vdb-legends'>
-          <span>Destino:</span>
-          {legends.map(legend => {
-            return <div>{legend.position + ': ' + legend.description}</div>
-          })}
-        </div>
+        {view}
       </div>
     )
   }

@@ -87,6 +87,10 @@ body {
   width: 100%;
 }
 
+.vdb-day-empty {
+  text-align: center;
+  padding: 100px 0px;
+}
 
 @media screen and (max-width: $m-point) {
   .container {
