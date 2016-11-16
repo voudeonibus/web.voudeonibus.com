@@ -37,7 +37,7 @@ export default class LineTable extends Component {
       <div className='vdb-table-line'>
         {struct.map(lineHours => {
           return (
-            <div>
+            <div className='vdb-table-line_item'>
               <div>{lineHours.hour}</div>
               <sup>{lineHours.indexLegend}</sup>
             </div>
