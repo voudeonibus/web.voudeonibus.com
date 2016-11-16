@@ -16,7 +16,7 @@ export default class NotFound extends Component {
       <div className='vdb-page_notfound'>
         <img src={NotFoundImg} />
         <h1>Ops, aconteceu algo de errado!</h1>
-        <p>{phrase} navegue pelas linhas no menu lateral e não perca o horário.</p>
+        <p>{phrase} navegue pelo menu lateral e não perca o horário.</p>
       </div>
     )
   }

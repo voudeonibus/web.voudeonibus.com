@@ -21,7 +21,6 @@ export default class LineItemHeader extends Component {
               <span className='number'><span>{this.props.line.lineNumber}</span></span>
               {this.props.line.lineName}
             </h3>
-            <p className='price'>R$ 3,40</p>
           </div>
         </div>
       </div>
