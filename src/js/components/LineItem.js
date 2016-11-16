@@ -81,29 +81,31 @@ export default class LineItem extends Component {
 
     if (ida.length > 0 || volta.length > 0) {
       view = [
-        <div className='vdb-wrap-table'>
-          <div className='vdb-way'>
-            <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
-            <LineTable hours={ida} legends={legends} />
+        <div className='vdb-wrap-ani'>
+          <div className='vdb-wrap-table'>
+            <div className='vdb-way'>
+              <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
+              <LineTable hours={ida} legends={legends} />
+            </div>
+            <div className='vdb-way'>
+              <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
+              <LineTable hours={volta} legends={legends} />
+            </div>
           </div>
-          <div className='vdb-way'>
-            <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
-            <LineTable hours={volta} legends={legends} />
+          <div className='vdb-legends'>
+            <h3 className='vdb-legends_title'>Destino:</h3>
+            {legends.map(legend => {
+              return (
+                <label><input type="checkbox" /><strong>{legend.position}: </strong>{legend.description}</label>
+              )
+            })}
           </div>
-        </div>,
-        <div className='vdb-legends'>
-          <h3 className='vdb-legends_title'>Destino:</h3>
-          {legends.map(legend => {
-            return (
-              <label><input type="checkbox" /><strong>{legend.position}: </strong>{legend.description}</label>
-            )
-          })}
         </div>
       ]
     } else {
       view = (
         <div className='vdb-day-empty'>
-          <p>Sem ônibus para esse dia :(</p>
+          <p>Sem horários para este dia :(</p>
         </div>
       )
     }
