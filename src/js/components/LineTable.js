@@ -32,12 +32,20 @@ export default class LineTable extends Component {
   render () {
 
     let struct = this.getHoursStruct()
+    let { checkeds } = this.props
 
     return (
       <div className='vdb-table-line'>
-        {struct.map(lineHours => {
+        {struct.map((lineHours, i) => {
+
+          let className = 'vdb-table-line_item'
+
+          if (checkeds.indexOf(lineHours.indexLegend) > -1) {
+            className += ' vdb-hightlight'
+          }
+
           return (
-            <div>
+            <div className={className} key={i}>
               <div>{lineHours.hour}</div>
               <sup>{lineHours.indexLegend}</sup>
             </div>

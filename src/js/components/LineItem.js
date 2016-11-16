@@ -76,7 +76,7 @@ export default class LineItem extends Component {
     let index = checkeds.indexOf(position)
     debugger
     if (index === -1) checkeds.push(position)
-    else checkeds = checkeds.slice(index, 0)
+    else checkeds.splice(index, 1)
     this.setState({
       checkeds
     })
@@ -94,24 +94,26 @@ export default class LineItem extends Component {
 
     if (ida.length > 0 || volta.length > 0) {
       view = [
-        <div className='vdb-wrap-table'>
-          <div className='vdb-way'>
-            <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
-            <LineTable hours={ida} legends={legends} />
-          </div>
-          <div className='vdb-way'>
-            <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
-            <LineTable hours={volta} legends={legends} />
+        <div className='vdb-wrap-ani' key={0}>
+          <div className='vdb-wrap-table'>
+            <div className='vdb-way'>
+              <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
+              <LineTable hours={ida} legends={legends} checkeds={checkeds} />
+            </div>
+            <div className='vdb-way'>
+              <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
+              <LineTable hours={volta} legends={legends} checkeds={checkeds}  />
+            </div>
           </div>
         </div>,
-        <div className='vdb-legends'>
+        <div className='vdb-legends' key={1}>
           <span>Destino:</span>
-          {legends.map(legend => {
+          {legends.map((legend, i) => {
             return (
-              <div>
+              <label key={i}>
                 <input type="checkbox" checked={checkeds.indexOf(legend.position) > -1} onClick={this.onClickCheckbox.bind(this, legend.position)}/>
-                {legend.position + ': ' + legend.description}
-              </div>
+                <strong>{legend.position}: </strong>{legend.description}
+              </label>
             )
           })}
         </div>
@@ -119,7 +121,7 @@ export default class LineItem extends Component {
     } else {
       view = (
         <div className='vdb-day-empty'>
-          <p>Sem ônibus para esse dia :(</p>
+          <p>Sem horários para este dia :(</p>
         </div>
       )
     }
