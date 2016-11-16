@@ -16,7 +16,8 @@ export default class LineItem extends Component {
 
     this.state = {
       line: this.getLineCurrent(props),
-      day: 1
+      day: 1,
+      checkeds: []
     }
 
     this.onSelectDay = this.onSelectDay.bind(this)
@@ -24,7 +25,8 @@ export default class LineItem extends Component {
 
   componentWillReceiveProps (nextProps) {
     this.setState({
-      line: this.getLineCurrent(nextProps)
+      line: this.getLineCurrent(nextProps),
+      checkeds: []
     })
   }
 
@@ -69,8 +71,19 @@ export default class LineItem extends Component {
     return legends
   }
 
+  onClickCheckbox (position) {
+    let checkeds = _.clone(this.state.checkeds, true)
+    let index = checkeds.indexOf(position)
+    debugger
+    if (index === -1) checkeds.push(position)
+    else checkeds = checkeds.slice(index, 0)
+    this.setState({
+      checkeds
+    })
+  }
+
   render () {
-    let { line } = this.state, view
+    let { line, checkeds } = this.state, view
     const ida = this.getDay('ida')
     const volta = this.getDay('volta')
     const legends = this.getLegends(ida.concat(volta))
@@ -94,7 +107,12 @@ export default class LineItem extends Component {
         <div className='vdb-legends'>
           <span>Destino:</span>
           {legends.map(legend => {
-            return <div>{legend.position + ': ' + legend.description}</div>
+            return (
+              <div>
+                <input type="checkbox" checked={checkeds.indexOf(legend.position) > -1} onClick={this.onClickCheckbox.bind(this, legend.position)}/>
+                {legend.position + ': ' + legend.description}
+              </div>
+            )
           })}
         </div>
       ]
