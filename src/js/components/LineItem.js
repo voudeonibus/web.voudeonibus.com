@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react'
+import { browserHistory } from 'react-router'
 import _ from 'lodash'
 
 import LineItemHeader from '../components/LineItemHeader'
 import LineSelectDays from '../components/LineSelectDays'
+import NotFound from '../components/NotFound'
 import LineTable from '../components/LineTable'
 import { maskLegend } from '../utils/legends'
 import Headroom from 'react-headroom'
@@ -36,6 +38,9 @@ export default class LineItem extends Component {
   }
 
   getDay (direction) {
+
+    if (!this.state.line) return []
+
     let filterDay = {type: this.state.day}
 
     return _.filter(this.state.line[direction], trip => {
@@ -69,6 +74,10 @@ export default class LineItem extends Component {
     const ida = this.getDay('ida')
     const volta = this.getDay('volta')
     const legends = this.getLegends(ida.concat(volta))
+
+    if (!line) {
+      return <NotFound isPage={false} />
+    }
 
     if (ida.length > 0 || volta.length > 0) {
       view = [
