@@ -24,10 +24,12 @@ export default class LineItem extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    this.setState({
-      line: this.getLineCurrent(nextProps),
-      checkeds: []
-    })
+    if(this.props.routeParams.id !== nextProps.routeParams.id) {
+      this.setState({
+        line: this.getLineCurrent(nextProps),
+        checkeds: []
+      })
+    }
   }
 
   getLineCurrent (props) {
@@ -74,7 +76,6 @@ export default class LineItem extends Component {
   onClickCheckbox (position) {
     let checkeds = _.clone(this.state.checkeds, true)
     let index = checkeds.indexOf(position)
-    debugger
     if (index === -1) checkeds.push(position)
     else checkeds.splice(index, 1)
     this.setState({
@@ -95,7 +96,7 @@ export default class LineItem extends Component {
     if (ida.length > 0 || volta.length > 0) {
       view = [
         <div className='vdb-wrap-ani' key={0}>
-          <div className='vdb-wrap-table'>
+          <div className={`vdb-wrap-table ${checkeds.length ? 'has-checked' : ''}`}>
             <div className='vdb-way'>
               <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
               <LineTable hours={ida} legends={legends} checkeds={checkeds} />
