@@ -108,7 +108,7 @@ export default class LineItem extends Component {
           </div>
         </div>,
         <div className='vdb-legends' key={1}>
-          <span>Destino:</span>
+          <h3 className='vdb-legends_title'>Destino:</h3>
           {legends.map((legend, i) => {
             return (
               <label key={i}>
