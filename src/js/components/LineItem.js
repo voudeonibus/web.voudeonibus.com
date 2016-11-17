@@ -94,9 +94,9 @@ export default class LineItem extends Component {
           </div>
           <div className='vdb-legends'>
             <h3 className='vdb-legends_title'>Destino:</h3>
-            {legends.map(legend => {
+            {legends.map( (legend, index) => {
               return (
-                <label><input type="checkbox" /><strong>{legend.position}: </strong>{legend.description}</label>
+                <label key={index}><input type="checkbox" /><strong>{legend.position}: </strong>{legend.description}</label>
               )
             })}
           </div>

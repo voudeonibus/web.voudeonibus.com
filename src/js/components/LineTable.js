@@ -35,9 +35,10 @@ export default class LineTable extends Component {
 
     return (
       <div className='vdb-table-line'>
-        {struct.map(lineHours => {
+        {struct.map((lineHours, index) => {
+          var legendItem = this.props.legends[index] && this.props.legends[index].description
           return (
-            <div className='vdb-table-line_item'>
+            <div key={index} className='vdb-table-line_item' data-legend={legendItem}>
               <div>{lineHours.hour}</div>
               <sup>{lineHours.indexLegend}</sup>
             </div>
