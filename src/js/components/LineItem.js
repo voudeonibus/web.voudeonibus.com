@@ -16,7 +16,8 @@ export default class LineItem extends Component {
 
     this.state = {
       line: this.getLineCurrent(props),
-      day: 1
+      day: 1,
+      checkeds: []
     }
 
     this.onSelectDay = this.onSelectDay.bind(this)
@@ -24,7 +25,8 @@ export default class LineItem extends Component {
 
   componentWillReceiveProps (nextProps) {
     this.setState({
-      line: this.getLineCurrent(nextProps)
+      line: this.getLineCurrent(nextProps),
+      checkeds: []
     })
   }
 
@@ -69,8 +71,19 @@ export default class LineItem extends Component {
     return legends
   }
 
+  onClickCheckbox (position) {
+    let checkeds = _.clone(this.state.checkeds, true)
+    let index = checkeds.indexOf(position)
+    debugger
+    if (index === -1) checkeds.push(position)
+    else checkeds.splice(index, 1)
+    this.setState({
+      checkeds
+    })
+  }
+
   render () {
-    let { line } = this.state, view
+    let { line, checkeds } = this.state, view
     const ida = this.getDay('ida')
     const volta = this.getDay('volta')
     const legends = this.getLegends(ida.concat(volta))
@@ -81,25 +94,28 @@ export default class LineItem extends Component {
 
     if (ida.length > 0 || volta.length > 0) {
       view = [
-        <div className='vdb-wrap-ani'>
+        <div className='vdb-wrap-ani' key={0}>
           <div className='vdb-wrap-table'>
             <div className='vdb-way'>
               <h2 className='vdb-way_title going'><span className='circle'></span>Ida<span className='arrow'></span></h2>
-              <LineTable hours={ida} legends={legends} />
+              <LineTable hours={ida} legends={legends} checkeds={checkeds} />
             </div>
             <div className='vdb-way'>
               <h2 className='vdb-way_title back'><span className='arrow'></span>Volta<span className='circle'></span></h2>
-              <LineTable hours={volta} legends={legends} />
+              <LineTable hours={volta} legends={legends} checkeds={checkeds}  />
             </div>
           </div>
-          <div className='vdb-legends'>
-            <h3 className='vdb-legends_title'>Destino:</h3>
-            {legends.map( (legend, index) => {
-              return (
-                <label key={index}><input type="checkbox" /><strong>{legend.position}: </strong>{legend.description}</label>
-              )
-            })}
-          </div>
+        </div>,
+        <div className='vdb-legends' key={1}>
+          <h3 className='vdb-legends_title'>Destino:</h3>
+          {legends.map((legend, i) => {
+            return (
+              <label key={i}>
+                <input type="checkbox" checked={checkeds.indexOf(legend.position) > -1} onClick={this.onClickCheckbox.bind(this, legend.position)}/>
+                <strong>{legend.position}: </strong>{legend.description}
+              </label>
+            )
+          })}
         </div>
       ]
     } else {
