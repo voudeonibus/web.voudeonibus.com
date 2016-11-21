@@ -32,6 +32,7 @@
     width: 100%;
     border: 0 !important;
     margin: 1em 0 0;
+    padding: 0 10px;
   }
 }
 
@@ -162,6 +163,10 @@
   padding-top: 10px;
   padding-bottom: 10px;
   transition: $ts;
+  @media screen and (max-width: $m-point) {
+    width: calc(100% / 2);
+    padding: 10px;
+  }
 
   &.vdb-hightlight {
     // color: $brand;
@@ -196,6 +201,9 @@
     right: 7px;
     font-size: .7em;
     font-weight: bold;
+    @media screen and (max-width: $m-point) {
+      right: 0;
+    }
   }
 }
 
