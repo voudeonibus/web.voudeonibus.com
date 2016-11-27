@@ -1,16 +1,16 @@
 @import '../../node_modules/normalize.css/normalize';
 
-@import '_base';
+@import 'template/_base';
 
-// Layout
-@import '_layout';
-@import '_animation';
-// |- Header
-@import '_mainHeader';;
+// template
+@import 'template/_layout';
+@import 'template/_animation';
+@import 'template/_mainHeader';;
 
-// Components
-@import '_Sidebar';
-@import '_Home';
-@import '_LineItem';
-@import '_NotFound';
+// pages
+@import 'pages/_Sidebar';
+@import 'pages/_Home';
+@import 'pages/_NotFound';
 
+// lines
+@import 'lines/_Lines';
