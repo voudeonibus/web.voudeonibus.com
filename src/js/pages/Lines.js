@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react'
 import { browserHistory } from 'react-router'
 import _ from 'lodash'
-
-import LineItemHeader from '../components/LineItemHeader'
-import LineSelectDays from '../components/LineSelectDays'
-import NotFound from '../components/NotFound'
-import LineTable from '../components/LineTable'
-import { maskLegend } from '../utils/legends'
 import Headroom from 'react-headroom'
 
-export default class LineItem extends Component {
+import NotFound from '../pages/NotFound'
+import LineItemHeader from '../components/lines/LineHeader'
+import LineSelectDays from '../components/lines/LineSelectDays'
+import LineTable from '../components/lines/LineTable'
+import { maskLegend } from '../utils/legends'
+
+export default class Lines extends Component {
 
   constructor (props) {
     super(props)
@@ -142,7 +142,8 @@ export default class LineItem extends Component {
   }
 }
 
-LineItem.contextTypes = {
+Lines.contextTypes = {
   lineItemScroll: PropTypes.number,
-  lineItemTop: PropTypes.bool
+  lineItemTop: PropTypes.bool,
+  routeParams: PropTypes.object
 }

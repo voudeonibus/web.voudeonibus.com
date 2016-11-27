@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import _ from 'lodash'
-import { maskLegend } from '../utils/legends'
+import { maskLegend } from '../../utils/legends'
 
 export default class LineTable extends Component {
   constructor (props) {
@@ -57,9 +57,11 @@ export default class LineTable extends Component {
 }
 
 LineTable.propTypes = {
-  hours: PropTypes.array
+  hours: PropTypes.array,
+  legends: PropTypes.array
 }
 
 LineTable.defaultProps = {
-  hours: []
+  hours: [],
+  legends: []
 }

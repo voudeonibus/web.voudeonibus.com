@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-import VoudeOnibusPng from '../../img/voudeonibus.png'
-import VoudeOnibusHorizontalPng from '../../img/voudeonibus-horizontal.png'
+import VoudeOnibusPng from '../../../img/voudeonibus.png'
+import VoudeOnibusHorizontalPng from '../../../img/voudeonibus-horizontal.png'
 
 const imgs = `${VoudeOnibusHorizontalPng} 640w, ${VoudeOnibusPng} 800w`
 
-export default class Header extends Component {
-  render () {
+const Header = () => {
     return (
       <header className='vdb-header'>
         <h1 className='vdb-title'>
@@ -17,5 +16,6 @@ export default class Header extends Component {
         </h1>
       </header>
     )
-  }
 }
+
+export default Header

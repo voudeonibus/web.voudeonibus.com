@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 import ReactGA from 'react-ga'
-
 
 export default class BoxSearch extends Component {
 
@@ -62,4 +61,8 @@ export default class BoxSearch extends Component {
       </form>
     )
   }
+}
+
+BoxSearch.PropTypes = {
+  searchQ: PropTypes.string
 }

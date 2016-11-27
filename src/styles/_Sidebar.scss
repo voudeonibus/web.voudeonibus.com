@@ -87,20 +87,6 @@
         }
       }
     }
-    &-vqd {
-      // font-weight: bold;
-      font-size: .9em;
-      display: none;
-    }
-  }
-  .strange-name {
-    display: inline-block;
-    color: $brand;
-    text-decoration: none;
-    font-size: 1em;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 

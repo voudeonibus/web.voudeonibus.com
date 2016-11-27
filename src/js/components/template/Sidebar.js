@@ -1,28 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import _ from 'lodash'
 import classNames from 'classnames'
 import { Link } from 'react-router'
 
-let strangeNames = ['Schroeder', 'Schubert']
+const MenuItemLines = (props) => {
+  let liClass = classNames({
+    'vdb-line-list_item': true,
+    'vdb-favorite': false,
+    'vdb-line-active': props.active
+  })
 
-class MenuItemLines extends Component {
-  render () {
-    let liClass = classNames({
-      'vdb-line-list_item': true,
-      'vdb-favorite': false,
-      'vdb-line-active': this.props.active
-    })
-
-    return (
-      <li className={liClass}>
-        <Link to={`/l/${this.props.content.lineNumber}`} onClick={this.props.onClick}>
-          <span className='number'><span>{this.props.content.lineNumber}</span></span>
-          {this.props.content.lineName}
-        </Link>
-      </li>
-    )
-  }
+  return (
+    <li className={liClass}>
+      <Link to={`/l/${props.content.lineNumber}`} onClick={props.onClick}>
+        <span className='number'><span>{props.content.lineNumber}</span></span>
+        {props.content.lineName}
+      </Link>
+    </li>
+  )
 }
+
+MenuItemLines.PropTypes = {
+  lineNumber: PropTypes.Number,
+  onClick: PropTypes.function,
+  lineName: PropTypes.string
+}
+
+
 
 export default class LineList extends Component {
 
@@ -84,21 +88,9 @@ export default class LineList extends Component {
               })()} />
       })
     } else {
-      let strangeNamesList = strangeNames.map((name, index) => {
-        let ent
-        if (index === strangeNames.length - 2) {
-          ent = ' ou '
-        } else if (index === strangeNames.length - 1) {
-          ent = ''
-        } else {
-          ent = ', '
-        }
-        return <span><a key={index} className='strange-name' href='javascript:void(0)' onClick={this.setSearch.bind(this, name)}>{name}</a>{ent}</span>
-      })
       contentLines =
         <div className='not-found'>
           <p className='not-found-p'>Nenhum resultado encontrado <span><span>:</span>(</span></p>
-          <p className='not-found-vqd'>Você quis dizer: {strangeNamesList}?</p>
         </div>
     }
 
@@ -108,4 +100,9 @@ export default class LineList extends Component {
       </ul>
     )
   }
+}
+
+
+LineList.PropTypes = {
+  searchQ: PropTypes.string
 }

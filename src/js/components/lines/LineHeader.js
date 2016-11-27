@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
-import HeaderPlaceholder from '../../img/header-placeholder.jpg'
+import HeaderPlaceholder from '../../../img/header-placeholder.jpg'
 
 export default class LineItemHeader extends Component {
   constructor (props) {
@@ -26,4 +26,9 @@ export default class LineItemHeader extends Component {
       </div>
     )
   }
+}
+
+LineItemHeader.contextTypes = {
+  lineItemScroll: PropTypes.number,
+  lineItemTop: PropTypes.bool
 }

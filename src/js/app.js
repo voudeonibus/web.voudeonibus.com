@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 import _ from 'lodash'
 
-import Header from './components/header'
-import BoxSearch from './components/BoxSearch'
-import Sidebar from './components/Sidebar'
+import Header from './components/template/header'
+import BoxSearch from './components/template/BoxSearch'
+import Sidebar from './components/template/Sidebar'
 
 export default class App extends Component {
 
