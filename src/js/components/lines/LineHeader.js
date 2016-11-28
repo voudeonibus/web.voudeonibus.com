@@ -5,6 +5,7 @@ import HeaderPlaceholder from '../../../img/header-placeholder.jpg'
 export default class LineItemHeader extends Component {
   constructor (props) {
     super(props)
+
   }
 
   render () {
@@ -13,7 +14,7 @@ export default class LineItemHeader extends Component {
 
     return (
       <div className='vdb-line-item-header_container'>
-        <div className={this.props.lineItemTop ? 'vdb-line-item-header is-top' : 'vdb-line-item-header'} style={{backgroundImage: `url(${HeaderPlaceholder})`}}>
+        <div className={this.props.lineItemTop ? 'vdb-line-item-header is-top' : 'vdb-line-item-header'} style={{backgroundImage: `url(/images/${this.props.line.lineNumber}.jpg)`}}>
           <div className='vdb-line-item-header_scroll' style={{opacity: scrollOpacity}}></div>
           <div className='vdb-line-item-header_infos'>
             <div className='fade' style={{opacity: scrollFade}}></div>
@@ -30,5 +31,6 @@ export default class LineItemHeader extends Component {
 
 LineItemHeader.contextTypes = {
   lineItemScroll: PropTypes.number,
-  lineItemTop: PropTypes.bool
+  lineItemTop: PropTypes.bool,
+  line: PropTypes.Object
 }

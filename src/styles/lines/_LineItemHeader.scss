@@ -1,6 +1,9 @@
 .vdb-line-item-header_container {
   height: $top-height - 1rem;
   // position: relative;
+  background: url(/images/header-placeholder.jpg);
+  background-position: center bottom;
+  background-size: cover;
 }
 
 .vdb-line-item-header {

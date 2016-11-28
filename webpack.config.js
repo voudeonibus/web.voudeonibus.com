@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer')
 const lost = require('lost')
 const fontMagician = require('postcss-font-magician')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -31,7 +32,11 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    }),
+    new CopyWebpackPlugin([{
+        from: path.join(__dirname, 'src/pics'),
+        to: 'images'
+    }])
   ],
 
   module: {
@@ -45,7 +50,7 @@ module.exports = {
     }, {
       test: /\.(png|jpe?g|svg|gif)$/,
       loaders: [
-        'url-loader?limit=8192'
+        'file?name=images/[name].[ext]'
       ]
     }],
   },
